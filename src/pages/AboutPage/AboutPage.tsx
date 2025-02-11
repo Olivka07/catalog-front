@@ -1,9 +1,18 @@
-import { Link } from 'atomic-router-react';
-import React from 'react';
-import { routes } from 'shared/router';
+import { result, JSXComponent } from 'app/vedro';
+import React, {
+    ChangeEvent,
+    FocusEvent,
+    FormEvent,
+    FormEventHandler,
+    useRef,
+    useState
+} from 'react';
 
 const AboutPage = () => {
-    return <div>About</div>;
+    return (
+        <div>
+            <JSXComponent />
+            {result}
+        </div>
+    );
 };
-
-export default AboutPage;

@@ -8,12 +8,12 @@ const MainPage = () => {
         <div>
             Main
             <div>
-                <InputField label='Имя' />
-                <Button theme='warn'>Отправить</Button>
+                <InputField label="Имя" />
+                <Button theme="warn">Отправить</Button>
                 <Typography.h1 as={'a'} weightFont={200}>
                     asdasd
                 </Typography.h1>
-                <Typography.h2 as='div'>asdasd</Typography.h2>
+                <Typography.h2 as="div">asdasd</Typography.h2>
             </div>
         </div>
     );
