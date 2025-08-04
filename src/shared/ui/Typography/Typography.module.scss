@@ -11,17 +11,22 @@
 }
 
 .h3__header {
-    @include adaptive-font(16, 24);
+    @include adaptive-font(18, 24);
     line-height: 1.2;
 }
 
 .h4__header {
-    @include adaptive-font(16, 24);
+    @include adaptive-font(16, 20);
     line-height: 1.2;
 }
 
 .text {
     @include adaptive-font(14, 20);
+}
+
+.card {
+    @include adaptive-font(14, 18);
+    line-height: 1.2;
 }
 
 .red {

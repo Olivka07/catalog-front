@@ -16,7 +16,8 @@ export default (env: EnvOptions) => {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         build: path.resolve(__dirname, 'dist'),
         html: path.resolve(__dirname, 'public', 'index.html'),
-        src: path.resolve(__dirname, 'src')
+        src: path.resolve(__dirname, 'src'),
+        public: path.resolve(__dirname, 'public')
     };
 
     const options: BuildOptions = {

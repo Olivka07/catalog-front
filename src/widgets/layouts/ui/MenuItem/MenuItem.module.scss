@@ -1,0 +1,12 @@
+.item__icon.item__menu {
+    height: var(--header-height);
+    padding: 10px 0;
+}
+
+.item {
+    &__icon {
+        height: 40px;
+        width: 40px;
+        padding: 5px 0;
+    }
+}

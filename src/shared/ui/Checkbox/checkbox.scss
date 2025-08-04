@@ -1,0 +1,47 @@
+.checkbox {
+    width: var(--app-font-size);
+    height: var(--app-font-size);
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 9999;
+    right: 0;
+    cursor: pointer;
+
+    &__label {
+        user-select: none;
+        cursor: pointer;
+        flex: 1 1 auto;
+    }
+
+    &__input {
+        &::after {
+            content: '';
+            box-sizing: border-box;
+            border: 1.5px solid var(--primary-color);
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            width: var(--app-font-size);
+            height: var(--app-font-size);
+            background-color: var(--inverted-color);
+        }
+
+        &_checked::after {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+    }
+}

@@ -2,7 +2,9 @@
 
 .NavLink {
     @include adaptive-font(24, 32);
+    @include withThemeTransition;
     font-weight: 600;
     color: var(--attention-color);
     display: flex;
+    align-items: center;
 }

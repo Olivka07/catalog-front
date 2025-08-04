@@ -1,22 +1,29 @@
-import {
-    UnmappedRouteObject,
-    createHistoryRouter,
-    createRoute
-} from 'atomic-router';
+import { createHistoryRouter, createRoute } from 'atomic-router';
 import { createBrowserHistory } from 'history';
+
+export const Paths = {
+    Main: '/',
+    Catalog: '/catalog',
+    About: '/about'
+} as const;
 
 export const routes = {
     main: createRoute(),
-    about: createRoute()
+    about: createRoute(),
+    catalog: createRoute()
 };
 
-const mappedRoutes: UnmappedRouteObject<any>[] = [
+const mappedRoutes = [
     {
-        path: '/',
+        path: Paths.Main,
         route: routes.main
     },
     {
-        path: '/about',
+        path: Paths.Catalog,
+        route: routes.catalog
+    },
+    {
+        path: Paths.About,
         route: routes.about
     }
 ];
@@ -24,7 +31,3 @@ const mappedRoutes: UnmappedRouteObject<any>[] = [
 export const router = createHistoryRouter({
     routes: mappedRoutes
 });
-
-const history = createBrowserHistory();
-
-router.setHistory(history);

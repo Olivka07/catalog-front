@@ -1,4 +1,4 @@
-import { ElementType, createElement, JSX, PropsWithChildren } from 'react';
+import { createElement, JSX, PropsWithChildren } from 'react';
 import { cn } from 'shared/helpers';
 import { AsComponent, AsComponentProps } from 'shared/utils/as-component/types';
 
@@ -13,18 +13,20 @@ interface TypographyProps {
 
 function createTypography<AS extends keyof JSX.IntrinsicElements>(
     as: AS,
-    defaultClassName?: string
+    defaultClassName?: string,
+    config: Partial<TypographyProps> = {}
 ) {
     const Component = <T extends AsComponent = typeof as>(
         props: AsComponentProps<T, PropsWithChildren<Partial<TypographyProps>>>
     ) => {
         const {
-            colorFont = 'black',
-            familyFont,
-            weightFont,
-            fontAlign = 'left',
+            colorFont = config?.colorFont,
+            familyFont = config?.familyFont,
+            weightFont = config?.weightFont,
+            fontAlign = config?.fontAlign ?? 'left',
             children,
             className,
+            as: asProp = as,
             ...restProps
         } = props;
 
@@ -42,7 +44,7 @@ function createTypography<AS extends keyof JSX.IntrinsicElements>(
             className: classes
         };
 
-        return createElement(as, newProps, children);
+        return createElement(asProp, newProps, children);
     };
 
     Component.displayName = `Typography.${as}`;
@@ -52,7 +54,12 @@ function createTypography<AS extends keyof JSX.IntrinsicElements>(
 
 export const Typography = {
     h1: createTypography('h1', css.h1__header),
-    h2: createTypography('h1', css.h2__header),
+    h2: createTypography('h2', css.h2__header),
+    h3: createTypography('h3', css.h3__header),
 
+    card: createTypography('p', css.card, {
+        fontAlign: 'center',
+        weightFont: 600
+    }),
     text: createTypography('p', css.text)
 };

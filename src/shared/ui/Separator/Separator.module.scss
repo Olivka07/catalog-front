@@ -1,0 +1,16 @@
+@import '../../styles/mixins.scss';
+
+.separator {
+    width: 100%;
+    position: relative;
+
+    border-collapse: collapse;
+    box-sizing: border-box;
+
+    @for $i from 1 through 10 {
+        &_#{$i} {
+            border: #{$i}px solid var(--primary-color);
+            @include withThemeTransition;
+        }
+    }
+}

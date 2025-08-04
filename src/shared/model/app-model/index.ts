@@ -1,2 +1,3 @@
-export * from './app-model';
-export * from './types';
+import { createEvent } from 'effector';
+
+export const initApp = createEvent();

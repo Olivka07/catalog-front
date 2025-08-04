@@ -1,5 +1,30 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf')
+        format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf')
+        format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Black.ttf')
+        format('truetype');
+    font-weight: 800;
+}
+
 :root {
-    --font-family: Consolas;
+    --font-family: Montserrat, sans-serif;
+
+    --font-size-xs: 12px;
+    --line-height-xs: 20px;
+    --font-xs: var(--font-size-xs) / var(--line-height-xs) var(--font-family);
 
     --font-size-s: 16px;
     --line-height-s: 24px;
@@ -12,4 +37,7 @@
     --font-size-l: 30px;
     --line-height-l: 38px;
     --font-l: var(--font-size-l) / var(--line-height-l) var(--font-family);
+
+    --z-index-modal: 200;
+    --z-index-modalBackground: 199;
 }

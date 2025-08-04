@@ -1,0 +1,53 @@
+@import '../../styles/mixins.scss';
+
+$positions: center, left, right;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    min-height: 100px;
+    height: 100%;
+    background-color: var(--bg-card-color);
+    border-radius: 10px;
+
+    @include withThemeTransition;
+
+    &_volume {
+        box-shadow: 0px 1px 0px 2px var(--card-volume-border-color);
+    }
+
+    &_plain_with_bg {
+        border: 2px solid var(--card-plain-border-color);
+    }
+
+    &_plain {
+        border: 2px solid var(--card-plain-border-color);
+        background: transparent;
+    }
+
+    &__header {
+        padding: 10px;
+
+        @each $pos in $positions {
+            &_#{$pos} {
+                text-align: $pos;
+            }
+        }
+    }
+
+    &__body {
+        padding: 10px;
+        flex: 1 1 auto;
+    }
+
+    &__footer {
+        padding: 10px 0;
+
+        @each $pos in $positions {
+            &_#{$pos} {
+                text-align: $pos;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ export interface TypePaths {
     build: string;
     html: string;
     src: string;
+    public: string;
 }
 export interface BuildOptions {
     paths: TypePaths;

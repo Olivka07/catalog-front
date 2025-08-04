@@ -1,5 +1,4 @@
 .dark {
-    --background: linear-gradient(to bottom right, rgb(38, 38, 118), pink);
     --primary-color: rgb(255, 255, 255);
     --inverted-color: rgb(0, 0, 0);
 
@@ -11,4 +10,13 @@
     --bg-color-normal-button-hovered: rgb(100, 100, 100);
 
     --attention-color: rgb(255, 255, 255);
+    --bg-main-color: rgb(0, 0, 0);
+
+    --bg-sidebar-color: rgb(103, 103, 103);
+
+    --checked-color: rgb(103, 163, 12);
+
+    --bg-card-color: rgb(123, 123, 123);
+    --card-volume-border-color: #424242;
+    --card-plain-border-color: #ffffff;
 }

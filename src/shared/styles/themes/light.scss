@@ -1,9 +1,4 @@
 .light {
-    --background: linear-gradient(
-        to bottom right,
-        rgb(211, 211, 244),
-        rgb(253, 96, 122)
-    );
     --primary-color: black;
     --inverted-color: rgb(255, 255, 255);
 
@@ -15,4 +10,13 @@
     --bg-color-normal-button-hovered: rgb(224, 224, 224);
 
     --attention-color: rgb(0, 0, 0);
+    --bg-main-color: rgb(255, 146, 4);
+
+    --bg-sidebar-color: rgb(255, 255, 255);
+
+    --checked-color: greenyellow;
+
+    --bg-card-color: rgb(242, 242, 242);
+    --card-volume-border-color: #cecece;
+    --card-plain-border-color: #000000;
 }

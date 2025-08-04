@@ -1,0 +1,13 @@
+.navbar {
+    &__container {
+        margin-left: 10px;
+        display: flex;
+        gap: 20px;
+        padding: 5px 10px;
+        width: max-content;
+    }
+
+    &__icon {
+        fill: var(--atten);
+    }
+}

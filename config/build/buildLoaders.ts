@@ -38,13 +38,20 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     };
 
     const fileLoader = {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-            {
-                loader: 'file-loader'
-            }
-        ]
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: 'images/[hash].[name][ext]'
+        }
     };
 
-    return [tsLoader, sassLoader, svgLoader, fileLoader];
+    const fontsLoader = {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: 'fonts/[hash].[name][ext]'
+        }
+    };
+
+    return [tsLoader, sassLoader, svgLoader, fileLoader, fontsLoader];
 }

@@ -1,0 +1,9 @@
+@import '../variables.scss';
+
+.desktop {
+    --app-font: var(--font-m);
+    --app-font-size: var(--font-size-m);
+
+    --header-height: 50px;
+    --sidebar-closed-width: 40px;
+}

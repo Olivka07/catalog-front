@@ -1,0 +1,12 @@
+@for $i from 0 through 5 {
+    .modalZIndex_#{$i} {
+        z-index: calc(var(--z-index-modal) + $i);
+    }
+}
+
+.modalMobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

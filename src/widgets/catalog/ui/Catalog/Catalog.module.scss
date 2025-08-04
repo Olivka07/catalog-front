@@ -1,0 +1,35 @@
+@import '../../../../shared/styles/mixins.scss';
+
+.products {
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100%;
+    box-sizing: border-box;
+
+    &__item {
+        cursor: pointer;
+        width: 200px;
+        flex-grow: 0;
+        margin: 0 10px 10px 10px;
+
+        @include mobile768 {
+            margin: 10px 0;
+            &:nth-child(2n) {
+                margin: 10px 0 10px auto;
+            }
+        }
+
+        @include mobile576 {
+            &:nth-child(n) {
+                margin: 10px auto;
+            }
+        }
+
+        .item__image {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
