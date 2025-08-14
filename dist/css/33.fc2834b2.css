@@ -1,0 +1,1 @@
+.page{height:calc(100% - var(--header-height) - 20px);padding:0 30px}.page__withSidebar{padding-left:calc(var(--sidebar-closed-width) + 10px)}
