@@ -3,11 +3,15 @@ import { ModalId } from 'shared/model/modals';
 import { Modal } from 'shared/ui/Modal';
 
 type VedroModalProps = {
-    id: ModalId;
+    id?: ModalId;
 };
 
 export const VedroModal = (props: VedroModalProps) => {
     const { id } = props;
 
-    return <Modal id={id}>VEDRO MODAL</Modal>;
+    return (
+        <Modal id={id}>
+            <div>VEDRO MODAL</div>
+        </Modal>
+    );
 };

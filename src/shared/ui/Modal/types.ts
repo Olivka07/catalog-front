@@ -1,16 +1,17 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import { ModalId } from 'shared/model/modals';
 import { ModalsPosition } from 'shared/model/modals/constants';
+import { NoopFn } from 'shared/types';
 
-type ModalProps = {
-    position?: ModalsPosition;
+export type ModalProps = {
     id: ModalId;
-    children: ReactNode;
+    children: ReactElement | ReactElement[];
 };
 
 type ModalHeaderProps = {
     children: ReactNode;
     className?: string;
+    handleModalClose?: NoopFn;
 };
 
 type ModalFooterButtonsProps = {

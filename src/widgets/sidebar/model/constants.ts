@@ -1,3 +1,7 @@
+// TODO категории
+
+import { Category } from 'entities/catalog';
+
 export const filters = [
     {
         name: 'bread',
@@ -9,6 +13,21 @@ export const filters = [
     },
     {
         name: 'chocolate',
-        label: 'Шоколад'
+        label: 'Кондитерские изделия'
+    },
+    {
+        name: 'teaCoffeeCacao',
+        label: 'Чай-кофе-какао'
+    },
+    {
+        name: 'milk',
+        label: 'Молочная продукция'
     }
 ] as const;
+
+export const categoryKeyToTitleMap = filters.reduce(
+    (acc, filter) => {
+        return { ...acc, [filter.name]: filter.label };
+    },
+    {} as Record<Category, string>
+);

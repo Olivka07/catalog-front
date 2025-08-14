@@ -2,11 +2,11 @@
 
 .h1__header {
     line-height: 1.5;
-    @include adaptive-font(32, 40);
+    @include adaptive-font(24, 30);
 }
 
 .h2__header {
-    @include adaptive-font(24, 30);
+    @include adaptive-font(18, 24);
     line-height: 1.5;
 }
 
@@ -57,4 +57,8 @@
     .weight-#{$i} {
         font-weight: #{$i};
     }
+}
+
+.inline {
+    display: inline;
 }

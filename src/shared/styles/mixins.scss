@@ -71,3 +71,26 @@ $mobileSize: 320;
 @mixin withThemeTransition() {
     transition: all 0.3s ease 0.2s;
 }
+
+@mixin useDefaultScrollbarStyle($width: 7px) {
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 6px; /* Закругление углов */
+        box-shadow: var(--scrollbar-thumb-box-shadow); /* Тень */
+    }
+
+    @include mobile768 {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            display: none;
+        }
+    }
+}

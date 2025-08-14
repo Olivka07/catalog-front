@@ -1,17 +1,35 @@
 import {
     BreadIcon,
     CatalogIcon,
+    ChevronCloseIcon,
+    ChevronOpenIcon,
     ChocolateIcon,
+    CloseIcon,
     DrinkingIcon,
-    MenuIcon
+    MenuIcon,
+    MenuNavigationIcon,
+    MilkIcon,
+    SearchIcon,
+    SortIcon,
+    TeaCoffeeCacaoIcon,
+    VegetablesIcon
 } from 'shared/assets/icons';
 
 export const IconMapper = {
     bread: BreadIcon,
     catalog: CatalogIcon,
     chocolate: ChocolateIcon,
+    close: CloseIcon,
     drinking: DrinkingIcon,
-    menu: MenuIcon
+    menu: MenuIcon,
+    menuNavigation: MenuNavigationIcon,
+    milk: MilkIcon,
+    chevronClose: ChevronCloseIcon,
+    chevronOpen: ChevronOpenIcon,
+    search: SearchIcon,
+    sort: SortIcon,
+    teaCoffeeCacao: TeaCoffeeCacaoIcon,
+    vegetables: VegetablesIcon
 } as const;
 
 export const IconSizeMapper = {

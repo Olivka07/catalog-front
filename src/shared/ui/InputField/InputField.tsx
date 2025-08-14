@@ -1,19 +1,41 @@
 import React, { FC, InputHTMLAttributes } from 'react';
 import { cn } from 'shared/helpers/cn';
 import css from './InputField.module.scss';
+import { LangValue } from 'shared/languages/utils';
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: string;
+    label?: string | LangValue;
+    name: string;
+    readOnly?: boolean;
+    disabled?: boolean;
+    overflowElipsis?: boolean;
 }
 export const InputField: FC<InputFieldProps> = (props) => {
-    const { label, className, ...otherProps } = props;
+    const {
+        label,
+        name,
+        className,
+        readOnly = false,
+        disabled = false,
+        overflowElipsis = false,
+        ...otherProps
+    } = props;
     return (
-        <label>
-            {label}:
+        <div>
+            {label && <label htmlFor={name}>{label.toString()}</label>}
+
             <input
                 {...otherProps}
-                className={cn(css.input__field, className)}
+                name={name}
+                id={name}
+                readOnly={readOnly}
+                disabled={disabled}
+                className={cn(
+                    css.input__field,
+                    { [css.overflowElipsis]: overflowElipsis },
+                    className
+                )}
             />
-        </label>
+        </div>
     );
 };

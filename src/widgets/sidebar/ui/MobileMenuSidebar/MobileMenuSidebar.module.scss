@@ -1,7 +1,7 @@
 .mobileMenu {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - var(--header-height) - 20px);
     opacity: 0;
     transform: translateX(-100%);
 

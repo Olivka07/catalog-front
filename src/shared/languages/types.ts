@@ -1,2 +1,2 @@
 export type GetLangNumericKey = 'rubles' | 'coops';
-export type GetLangKey = 'catalog';
+export type GetLangKey = 'catalog' | 'search';

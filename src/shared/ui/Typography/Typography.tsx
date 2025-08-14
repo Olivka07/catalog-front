@@ -9,6 +9,7 @@ interface TypographyProps {
     weightFont: 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
     colorFont: 'black' | 'red';
     fontAlign: 'left' | 'center' | 'right';
+    isInline?: boolean;
 }
 
 function createTypography<AS extends keyof JSX.IntrinsicElements>(
@@ -24,6 +25,7 @@ function createTypography<AS extends keyof JSX.IntrinsicElements>(
             familyFont = config?.familyFont,
             weightFont = config?.weightFont,
             fontAlign = config?.fontAlign ?? 'left',
+            isInline = false,
             children,
             className,
             as: asProp = as,
@@ -36,7 +38,8 @@ function createTypography<AS extends keyof JSX.IntrinsicElements>(
             css[colorFont],
             css[familyFont],
             css[fontAlign],
-            css[`weight-${weightFont}`]
+            css[`weight-${weightFont}`],
+            { [css.inline]: isInline }
         );
 
         const newProps = {

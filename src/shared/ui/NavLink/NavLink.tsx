@@ -19,7 +19,14 @@ export const NavLink: FC<PropsWithChildren<NavLinkProps>> = ({
 }) => {
     return (
         <Link className={css.NavLink} to={path}>
-            {icon && <Icon icon={icon} size={iconSize} />}
+            {icon && (
+                <Icon
+                    icon={icon}
+                    size={iconSize}
+                    withAppereance
+                    className={css.icon}
+                />
+            )}
             {children}
         </Link>
     );

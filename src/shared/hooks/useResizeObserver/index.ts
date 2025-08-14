@@ -1,15 +1,16 @@
 import { useRef, useState, useSyncExternalStore } from 'react';
 import { NoopFn } from 'shared/types';
 
-type UseResizeObserverProps = {
+type UseResizeObserverProps<T extends HTMLElement> = {
     querySelector?: string;
+    ref?: React.MutableRefObject<T>;
 };
 
 export const useResizeObserver = <T extends HTMLElement = HTMLElement>(
-    props: UseResizeObserverProps = {}
+    props: UseResizeObserverProps<T> = {}
 ) => {
-    const { querySelector } = props;
-    const ref = useRef<T>(null);
+    const { querySelector, ref } = props;
+    const innerRef = useRef<T>(ref?.current ?? null);
 
     const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -26,16 +27,16 @@ export const useResizeObserver = <T extends HTMLElement = HTMLElement>(
             }
         });
 
-        if (querySelector && !ref.current) {
-            ref.current = document.querySelector(querySelector);
+        if (querySelector && !innerRef.current) {
+            innerRef.current = document.querySelector(querySelector);
         }
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (innerRef.current) {
+            observer.observe(innerRef.current);
         }
 
         return () => observer.disconnect();
     };
 
-    return [ref, useSyncExternalStore(subscribe, getShapshot)] as const;
+    return [innerRef, useSyncExternalStore(subscribe, getShapshot)] as const;
 };

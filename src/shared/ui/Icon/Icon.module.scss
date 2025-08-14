@@ -1,6 +1,6 @@
 @import '../../styles/mixins.scss';
 
-.icon {
-    fill: var(--attention-color);
+.icon__appereance path {
     @include withThemeTransition;
+    fill: var(--attention-color);
 }

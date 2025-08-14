@@ -1,6 +1,5 @@
 import { createEvent, createStore, sample } from 'effector';
 import { ModalId } from './types';
-import { MENU_MODAL, VEDRO_MODAL } from './constants';
 
 const showModal = createEvent<ModalId>();
 const hideModal = createEvent<ModalId>();
@@ -25,10 +24,20 @@ sample({
     target: $shownModals
 });
 
+const hideLastOpenedModalTriggered = createEvent();
+
+sample({
+    clock: hideLastOpenedModalTriggered,
+    source: $shownModals,
+    fn: (modals) => modals.slice(0, -1),
+    target: $shownModals
+});
+
 export const modalsModel = {
     $shownModals,
     $isShown,
 
     showModal,
-    hideModal
+    hideModal,
+    hideLastOpenedModalTriggered
 };

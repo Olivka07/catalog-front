@@ -8,7 +8,11 @@ import { cn } from 'shared/helpers';
 export const FiltersSidebar = () => {
     const { isDesktop } = useViewportInfo();
     return (
-        <nav className={cn(css.nav, { [css.nav__mobile]: !isDesktop })}>
+        <nav
+            className={cn(css.nav, {
+                [css.nav__mobile]: !isDesktop
+            })}
+        >
             {isDesktop && <MenuItem />}
             <div className={css.scroll}>
                 <ul className={css.list}>

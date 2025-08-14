@@ -4,7 +4,7 @@ import { cn } from 'shared/helpers';
 type PageProps = PropsWithChildren<{
     withSidebar?: boolean;
 }>;
-export const Page = (props: PageProps) => {
+export const PageWrapper = (props: PageProps) => {
     const { withSidebar, children } = props;
 
     return (

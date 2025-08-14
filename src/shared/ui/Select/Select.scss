@@ -1,0 +1,66 @@
+@import '../../styles/mixins.scss';
+
+.selectInput {
+    padding-right: 37px;
+}
+
+.select__container {
+    position: relative;
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+    }
+}
+
+.selectSchevron {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.optionsModal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    background-color: var(--inverted-color);
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px var(--modal-border-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    cursor: pointer;
+
+    @include withThemeTransition();
+    @include useDefaultScrollbarStyle();
+
+    &__closed {
+        min-height: 0;
+        height: 0;
+    }
+}
+
+.option {
+    padding: 0 5px;
+    .optionText {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include adaptive-font();
+    }
+
+    &__selected {
+        background-color: var(--bg-selected-option);
+        color: var(--color-selected-option);
+    }
+}

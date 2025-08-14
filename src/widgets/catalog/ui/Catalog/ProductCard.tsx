@@ -25,7 +25,9 @@ export const ProductCard = (props: ProductCardProps) => {
             data-category={product.category}
             data-id={product.id}
         >
-            <Card>
+            <Card
+                className={cn({ [css.specialOffer]: product.isSpecialOffer })}
+            >
                 <Card.Header>
                     <Typography.card>
                         {product.title.toUpperCase()}
@@ -37,7 +39,7 @@ export const ProductCard = (props: ProductCardProps) => {
                 {!!product.price && (
                     <Card.Footer>
                         <Typography.card>
-                            {getLangNumericKey(price, 'coops')}
+                            {getLangNumericKey(price, 'rubles')}
                         </Typography.card>
                     </Card.Footer>
                 )}

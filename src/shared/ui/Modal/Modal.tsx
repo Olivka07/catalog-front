@@ -6,9 +6,12 @@ import { useViewportInfo } from 'shared/hooks/useViewportInfo';
 
 import './Modal.scss';
 import { cn } from 'shared/helpers';
+import { Separator } from '../Separator';
+import { Icon } from '../Icon';
+import { ModalsPosition } from 'shared/model/modals/constants';
 
 export const Modal: IModal = (props) => {
-    const { id, position, children } = props;
+    const { id, children } = props;
     const [shownModals, hideModal] = useUnit([
         modalsModel.$shownModals,
         modalsModel.hideModal
@@ -16,7 +19,7 @@ export const Modal: IModal = (props) => {
 
     const { isMobile } = useViewportInfo();
 
-    const handleCloseModalButtonClick = () => {
+    const handleModalClose = () => {
         hideModal(id);
     };
 
@@ -25,25 +28,70 @@ export const Modal: IModal = (props) => {
         return idx;
     }, [shownModals, id]);
 
-    console.log(id, zIdx, 'LOL');
+    const handleModalClick = (e: React.SyntheticEvent) => {
+        e.stopPropagation();
+    };
 
     if (isMobile) {
         return (
-            <div className={cn('modalMobile', `modalZIndex_${zIdx}`)}>
-                {children}
+            <div
+                onClick={handleModalClick}
+                className={cn('modal', 'modalMobile', `modalZIndex_${zIdx}`)}
+            >
+                {React.Children.map(children, (child) =>
+                    React.cloneElement(child, {
+                        handleModalClose
+                    })
+                )}
             </div>
         );
     }
+
+    return (
+        <div
+            onClick={handleModalClick}
+            className={cn('modal', 'modalDesktop', `modalZIndex_${zIdx}`)}
+        >
+            {React.Children.map(children, (child) =>
+                React.cloneElement(child, {
+                    handleModalClose
+                })
+            )}
+        </div>
+    );
 };
 
-Modal.Header = () => {
-    return <></>;
+Modal.Header = (props) => {
+    const { children, className, handleModalClose } = props;
+    return (
+        <>
+            <div
+                aria-label="modal-header"
+                className={cn('modalHeader', className)}
+            >
+                {children}
+                <Icon
+                    onClick={handleModalClose}
+                    className="modalHeader__icon"
+                    icon="close"
+                    size="large"
+                    withAppereance
+                />
+            </div>
+        </>
+    );
 };
 
-Modal.Body = () => {
-    return <></>;
+Modal.Body = (props) => {
+    const { children, className } = props;
+    return <div className={cn('modalBody', className)}>{children}</div>;
 };
 
-Modal.FooterButtons = () => {
-    return <></>;
+Modal.FooterButtons = (props) => {
+    const { children, className } = props;
+    return (
+        <>
+            <div className={cn('modalFooter', className)}>{children}</div>
+        </>
+    );
 };

@@ -48,8 +48,6 @@ export const AdaptivityContextProvider = ({
     );
     const isMobile = useMatchMedia(`(max-width: ${MobileSize.width.max}px)`);
 
-    console.log(isMobile, 'from adaptiv');
-
     const [_, size] = useResizeObserver({ querySelector: '#root' });
 
     const value = useMemo(() => {

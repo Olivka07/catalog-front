@@ -7,11 +7,13 @@ import classes from './Icon.module.scss';
 interface IconProps extends React.SVGAttributes<SVGElement> {
     icon: IconName;
     size: IconSize;
+    withAppereance?: boolean;
 }
 
 export const Icon: FC<IconProps> = ({
     icon,
     size,
+    withAppereance = false,
     className,
     ...otherProps
 }) => {
@@ -20,7 +22,9 @@ export const Icon: FC<IconProps> = ({
         <MappingComponent
             {...otherProps}
             {...IconSizeMapper[size]}
-            className={cn(className, classes.icon)}
+            className={cn(className, {
+                [classes.icon__appereance]: withAppereance
+            })}
         />
     );
 };

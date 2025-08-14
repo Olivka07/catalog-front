@@ -6,11 +6,14 @@ import { cn } from 'shared/helpers';
 import { mobileMenuModel } from 'features/sidebar';
 
 export const MobileMenuSidebar = () => {
-    const isMobileMenuShown = useUnit(mobileMenuModel.$isMobileMenuShown);
-    console.log(isMobileMenuShown, 'isMobileMenuShown');
+    const [isMobileMenuShown, toggleIsMobileMenuShown] = useUnit([
+        mobileMenuModel.$isMobileMenuShown,
+        mobileMenuModel.toggleIsMobileMenuShown
+    ]);
     return (
         <>
             <div
+                onClick={toggleIsMobileMenuShown}
                 className={cn(css.mobileMenu, {
                     [css.openned]: isMobileMenuShown
                 })}

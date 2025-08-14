@@ -1,18 +1,32 @@
 import { useUnit } from 'effector-react';
-import { ReactNode } from 'react';
-import { modalsModel } from 'shared/model/modals';
+import React, { ReactElement, ReactNode } from 'react';
+import { ModalId, modalsModel } from 'shared/model/modals';
 
 import './ModalWrapper.scss';
 
 type ModalWrapperProps = {
-    children: ReactNode;
+    children: ReactElement<{ id: ModalId }>;
 };
 
 export const ModalWrapper = (props: ModalWrapperProps) => {
     const { children } = props;
-    const isShown = useUnit(modalsModel.$isShown);
+    const [isShown, shownModals, hideLastOpenedModalTrigger] = useUnit([
+        modalsModel.$isShown,
+        modalsModel.$shownModals,
+        modalsModel.hideLastOpenedModalTriggered
+    ]);
 
     if (!isShown) return null;
 
-    return <div className="modalWrapper">{children}</div>;
+    const handleModalWrapperClick = () => {
+        hideLastOpenedModalTrigger();
+    };
+
+    return (
+        <section className="modalWrapper" onClick={handleModalWrapperClick}>
+            {React.Children.map(children, (child) =>
+                shownModals.includes(child.props.id) ? child : null
+            )}
+        </section>
+    );
 };

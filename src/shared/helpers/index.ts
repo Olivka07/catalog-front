@@ -7,3 +7,4 @@ export { isString } from './isString';
 export { isUndefined } from './isUndefined';
 export { parseBooleanString } from './parseBooleanString';
 export { shallowEqualArrays } from './shallowEqualArrays';
+export { isIncludeStr } from './isIncludeStr';

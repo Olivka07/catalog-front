@@ -8,17 +8,16 @@
     max-height: 100%;
     box-sizing: border-box;
 
+    @include useDefaultScrollbarStyle();
+
     &__item {
         cursor: pointer;
         width: 200px;
         flex-grow: 0;
-        margin: 0 10px 10px 10px;
+        margin: 0 20px 20px 20px;
 
         @include mobile768 {
-            margin: 10px 0;
-            &:nth-child(2n) {
-                margin: 10px 0 10px auto;
-            }
+            margin: 20px;
         }
 
         @include mobile576 {
@@ -31,5 +30,19 @@
             display: flex;
             align-items: center;
         }
+    }
+}
+
+.specialOffer {
+    animation: shine 0.6s linear infinite alternate;
+    // box-shadow: 2px -4px 4px 9px rgb(255, 255, 0);
+}
+
+@keyframes shine {
+    from {
+        box-shadow: 2px -4px 4px 9px rgb(255, 255, 0);
+    }
+    to {
+        box-shadow: 0px 0px 4px 3px rgb(255 255 0 / 78%);
     }
 }

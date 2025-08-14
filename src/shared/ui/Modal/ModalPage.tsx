@@ -1,23 +1,19 @@
 import { useUnit } from 'effector-react';
-import React, { ReactNode, useMemo } from 'react';
+import React, {
+    ReactElement,
+    ReactNode,
+    cloneElement,
+    createElement,
+    useMemo
+} from 'react';
 import { ModalId, modalsModel } from 'shared/model/modals';
+import { Modal } from './Modal';
+import { ModalProps } from './types';
 
-type ModalPageProps = {
-    id: ModalId;
-    children: ReactNode;
-};
+type ModalPageProps = ModalProps;
 
 export const ModalPage = (props: ModalPageProps) => {
     const { id, children } = props;
-    const shownModals = useUnit(modalsModel.$shownModals);
 
-    const isShown = useMemo(() => {
-        return shownModals.includes(id);
-    }, [id, shownModals]);
-
-    console.log(isShown, id, 'isShown');
-
-    if (!isShown) return null;
-
-    return children;
+    return cloneElement<ModalProps>(children as ReactElement, { id });
 };

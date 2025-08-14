@@ -17,6 +17,16 @@ const App = () => {
     const theme = useUnit(themeModel.$theme);
     const { isDesktop, isMobile, isLargeScreen, isTablet } = useViewportInfo();
 
+    const renderModals = () => {
+        return (
+            <ModalWrapper>
+                <ModalPage id={VEDRO_MODAL} key={VEDRO_MODAL}>
+                    <VedroModal />
+                </ModalPage>
+            </ModalWrapper>
+        );
+    };
+
     return (
         <div
             className={cn(
@@ -31,14 +41,7 @@ const App = () => {
             )}
         >
             <RoutesView />
-            <ModalWrapper>
-                <ModalPage id={MENU_MODAL} key={MENU_MODAL}>
-                    <MenuModal id={MENU_MODAL} />
-                </ModalPage>
-                <ModalPage id={VEDRO_MODAL} key={VEDRO_MODAL}>
-                    <VedroModal id={VEDRO_MODAL} />
-                </ModalPage>
-            </ModalWrapper>
+            {renderModals()}
         </div>
     );
 };

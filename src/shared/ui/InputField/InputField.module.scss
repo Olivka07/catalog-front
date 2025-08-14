@@ -1,8 +1,17 @@
+@import '../../styles/mixins.scss';
+
 .input__field {
     border-radius: 5px;
     padding: 5px 10px;
     border: 1px solid black;
-    margin-left: 10px;
     font: inherit;
+    @include adaptive-font();
+    box-sizing: border-box;
     outline: none;
+    max-width: 250px;
+    min-width: 150px;
+}
+
+.overflowElipsis {
+    text-overflow: ellipsis;
 }

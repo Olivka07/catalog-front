@@ -9,7 +9,7 @@
 
     @for $i from 1 through 10 {
         &_#{$i} {
-            border: #{$i}px solid var(--primary-color);
+            border-bottom: #{$i}px solid var(--primary-color);
             @include withThemeTransition;
         }
     }

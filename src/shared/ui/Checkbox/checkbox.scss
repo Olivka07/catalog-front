@@ -1,6 +1,8 @@
 .checkbox {
     width: var(--app-font-size);
     height: var(--app-font-size);
+    min-width: 24px;
+    min-height: 24px;
     opacity: 0;
     margin: 0;
     position: absolute;
@@ -24,6 +26,8 @@
             display: block;
             width: var(--app-font-size);
             height: var(--app-font-size);
+            min-width: 24px;
+            min-height: 24px;
             background-color: var(--inverted-color);
         }
 

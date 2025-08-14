@@ -5,6 +5,12 @@
         gap: 20px;
         padding: 5px 10px;
         width: max-content;
+
+        &_mobile {
+            margin-left: 0;
+            padding: 5px 0;
+            flex-direction: column;
+        }
     }
 
     &__icon {

@@ -1,6 +1,11 @@
 import { ProductImageKey } from 'shared/assets/images/products';
 
-export type Category = 'bread' | 'drinking';
+export type Category =
+    | 'bread'
+    | 'drinking'
+    | 'chocolate'
+    | 'teaCoffeeCacao'
+    | 'milk';
 
 export type Product = {
     id: string;

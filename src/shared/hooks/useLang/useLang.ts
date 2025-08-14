@@ -7,6 +7,7 @@ import { useEvent } from '../useEvent';
 import { useMemo } from 'react';
 import { WithReplace, withReplace } from 'shared/helpers/withReplace';
 import { REPLACE_TOKEN } from 'shared/helpers/withReplace/constants';
+import { LangValue } from 'shared/languages/utils';
 
 /**
  *
@@ -46,21 +47,12 @@ export const useLang = () => {
     const lang = useUnit($language);
 
     const getLangKey = useEvent((key: GetLangKey) => {
-        const resString = languages[lang][key];
+        const resString = new LangValue(
+            languages[lang][key] ?? '',
+            withReplace
+        );
 
-        Object.defineProperty(resString, 'withReplace', {
-            writable: false,
-            configurable: false,
-            enumerable: false,
-            value: withReplace.bind(null, resString)
-        });
-
-        return resString as string & {
-            withReplace: (
-                token: string,
-                replacement: string | number
-            ) => string;
-        };
+        return resString;
     });
 
     const getLangNumericKey = useEvent(
