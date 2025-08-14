@@ -1,3 +1,5 @@
+@import '../../styles/mixins.scss';
+
 .checkbox {
     width: var(--app-font-size);
     height: var(--app-font-size);
@@ -14,6 +16,7 @@
         user-select: none;
         cursor: pointer;
         flex: 1 1 auto;
+        @include adaptive-font();
     }
 
     &__input {

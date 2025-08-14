@@ -46,9 +46,10 @@
         }
 
         &__icon {
-            height: 40px;
+            height: 56px;
+            display: flex;
+            align-items: center;
             width: 40px;
-            padding: 5px 0;
 
             &_checked {
                 background-color: var(--checked-color);

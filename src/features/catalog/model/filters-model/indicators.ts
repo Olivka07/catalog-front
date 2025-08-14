@@ -10,6 +10,7 @@ export const catalogIndicators = createIndicatorsControl<CatalogIndicators>({
         drinking: false,
         chocolate: false,
         milk: false,
-        teaCoffeeCacao: false
+        teaCoffeeCacao: false,
+        vegetables: false
     }
 });

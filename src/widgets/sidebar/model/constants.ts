@@ -22,6 +22,10 @@ export const filters = [
     {
         name: 'milk',
         label: 'Молочная продукция'
+    },
+    {
+        name: 'vegetables',
+        label: 'Овощи'
     }
 ] as const;
 

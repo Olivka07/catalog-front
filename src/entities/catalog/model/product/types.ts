@@ -4,8 +4,9 @@ export type Category =
     | 'bread'
     | 'drinking'
     | 'chocolate'
+    | 'milk'
     | 'teaCoffeeCacao'
-    | 'milk';
+    | 'vegetables';
 
 export type Product = {
     id: string;
