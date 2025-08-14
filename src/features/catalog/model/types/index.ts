@@ -5,8 +5,9 @@ export type CatalogIndicators = {
     sort: CatalogSortingMethodValue;
 
     bread: boolean;
-    drinking: boolean;
     chocolate: boolean;
+    drinking: boolean;
+    fruits: boolean;
     milk: boolean;
     teaCoffeeCacao: boolean;
     vegetables: boolean;

@@ -36,18 +36,21 @@ const $milkCategory = catalogIndicators.$value.map(({ milk }) => milk);
 const $vegetables = catalogIndicators.$value.map(
     ({ vegetables }) => vegetables
 );
+const $fruits = catalogIndicators.$value.map(({ fruits }) => fruits);
 
 const $categories = combine(
     $breadCategory,
     $chocolateCategory,
     $drinkingCategory,
+    $fruits,
     $milkCategory,
     $teaCoffeeCacaoCategory,
     $vegetables,
-    (bread, chocolate, drinking, milk, teaCoffeeCacao, vegetables) => ({
+    (bread, chocolate, drinking, fruits, milk, teaCoffeeCacao, vegetables) => ({
         bread,
         chocolate,
         drinking,
+        fruits,
         milk,
         teaCoffeeCacao,
         vegetables

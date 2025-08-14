@@ -30,7 +30,10 @@
     }
 
     .scroll {
+        overflow-y: auto;
+        overflow-x: hidden;
         height: calc(100vh - var(--header-height) - 2 * 10px);
+        @include useDefaultScrollbarStyle();
     }
 
     .list {

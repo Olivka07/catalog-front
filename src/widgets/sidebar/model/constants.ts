@@ -26,6 +26,10 @@ export const filters = [
     {
         name: 'vegetables',
         label: 'Овощи'
+    },
+    {
+        name: 'fruits',
+        label: 'Фрукты и ягоды'
     }
 ] as const;
 

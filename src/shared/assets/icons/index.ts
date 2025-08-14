@@ -12,6 +12,7 @@ import SearchIcon from './search.svg';
 import SortIcon from './sort.svg';
 import TeaCoffeeCacaoIcon from './teaCoffeeCacao.svg';
 import VegetablesIcon from './vegetables.svg';
+import FruitsIcon from './fruits.svg';
 
 export {
     BreadIcon,
@@ -21,6 +22,7 @@ export {
     ChocolateIcon,
     CloseIcon,
     DrinkingIcon,
+    FruitsIcon,
     MenuIcon,
     MenuNavigationIcon,
     MilkIcon,

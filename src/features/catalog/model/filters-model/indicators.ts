@@ -7,8 +7,9 @@ export const catalogIndicators = createIndicatorsControl<CatalogIndicators>({
         sort: null,
 
         bread: false,
-        drinking: false,
         chocolate: false,
+        drinking: false,
+        fruits: false,
         milk: false,
         teaCoffeeCacao: false,
         vegetables: false
