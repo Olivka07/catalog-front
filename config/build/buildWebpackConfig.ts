@@ -15,7 +15,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
         output: {
             path: paths.build,
             filename: '[name].[contenthash:8].js',
-            publicPath: isDev ? '/' : '/dist/',
+            publicPath: '/',
             clean: true
         },
         module: {
