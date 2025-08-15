@@ -1,5 +1,6 @@
 import { combine, createStore, sample } from 'effector';
 import { Product, productModel } from 'entities/catalog';
+import { CatalogSortingMethod } from 'entities/catalog/lib/constants';
 import { catalogIndicators } from 'features/catalog/model/filters-model/indicators';
 import { sortCatalogByWay } from 'features/catalogSort/lib/utils';
 import { debounce } from 'patronum';
@@ -16,11 +17,14 @@ export const $catalogProducts = createStore<Product[]>([]).on(
     (_, products) => products
 );
 
-const $search = catalogIndicators.$value.map(({ search }) => search);
+export const $search = catalogIndicators.$value.map(({ search }) => search);
 const debounceSearchChanged = debounce($search, DEBOUNCE_TIME);
 
 const $sort = catalogIndicators.$value.map(({ sort }) => sort);
 const debounceSortChanged = debounce($sort, DEBOUNCE_TIME);
+export const $isSortSelected = $sort.map(
+    (sort) => !!sort && sort !== CatalogSortingMethod.NO_SORTING
+);
 
 const $breadCategory = catalogIndicators.$value.map(({ bread }) => bread);
 const $drinkingCategory = catalogIndicators.$value.map(

@@ -20,13 +20,22 @@ type SelectProps<Value extends SelectOption['value']> = {
     options: SelectOption[];
     name: string;
     onChange: (name: string, value: Value) => void;
+    inputPlacehoder?: string;
     value: Value;
 };
 
 export const Select = <Value extends SelectOption['value']>(
     props: SelectProps<Value>
 ) => {
-    const { name, options, className, value, label, onChange } = props;
+    const {
+        name,
+        options,
+        className,
+        value,
+        label,
+        onChange,
+        inputPlacehoder = 'Не выбрано'
+    } = props;
     const selectContainerRef = useRef<HTMLDivElement>(null);
     const [isOpenedOptions, setIsOpenedOptions] = useState(false);
     const [inputValue, setInputValue] = useState(
@@ -47,18 +56,19 @@ export const Select = <Value extends SelectOption['value']>(
     };
 
     return (
-        <RelativeModalContainer>
+        <RelativeModalContainer className={className}>
             <div
                 ref={selectContainerRef}
                 onClick={handleSelectClick}
-                className={cn(className, 'select__container')}
+                className={cn('select__container')}
             >
                 {label && <label htmlFor={name}>{label.toString()}</label>}
                 <InputField
                     overflowElipsis
-                    name={'selectInput__${name}'}
+                    name={`selectInput__${name}`}
                     value={inputValue}
                     title={inputValue}
+                    placeholder={inputPlacehoder}
                     className="selectInput"
                     readOnly
                 />

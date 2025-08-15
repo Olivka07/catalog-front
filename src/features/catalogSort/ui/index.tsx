@@ -18,6 +18,7 @@ export const CatalogSort = (props: CatalogSortProps) => {
     return (
         <Select
             name="sort"
+            inputPlacehoder="Отсортировать"
             className={className}
             value={indicators.sort}
             options={SortingOptions}

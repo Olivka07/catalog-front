@@ -15,6 +15,7 @@
 
 .selectSchevron {
     position: absolute;
+    pointer-events: none;
     right: 5px;
     top: 50%;
     transform: translate(0, -50%);
@@ -30,7 +31,8 @@
     flex-direction: column;
 
     width: 100%;
-    max-height: 100px;
+    height: fit-content;
+    max-height: 300px;
     min-height: 100px;
     background-color: var(--inverted-color);
     border-radius: 5px;
@@ -44,8 +46,7 @@
     @include useDefaultScrollbarStyle();
 
     &__closed {
-        min-height: 0;
-        height: 0;
+        display: none;
     }
 }
 

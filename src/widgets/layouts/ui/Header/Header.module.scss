@@ -24,6 +24,26 @@
             transform: none;
             left: 0;
         }
+
+        .mobileCatalogSort__container {
+            :global(.relativeModal) {
+                width: 80vw;
+            }
+
+            :global(.selectInput) {
+                min-width: 100%;
+            }
+        }
+
+        .mobileCatalogSearch__container {
+            :global(.relativeModal) {
+                width: 80vw;
+            }
+
+            :global(.input__field) {
+                min-width: 100%;
+            }
+        }
     }
 }
 

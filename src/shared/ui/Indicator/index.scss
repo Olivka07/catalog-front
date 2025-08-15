@@ -1,0 +1,20 @@
+.indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.indicator::after {
+    content: ' ';
+    display: block;
+    width: 10px;
+    height: 10px;
+    box-shadow: var(--indicator-box-shadow);
+    background-color: var(--indicator-color);
+}
+
+.indicatorRounded::after {
+    border-radius: 50%;
+}
