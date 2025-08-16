@@ -4,11 +4,13 @@ import { filters } from 'widgets/sidebar/model/constants';
 import { MenuItem } from 'widgets/layouts/ui/MenuItem';
 import { useViewportInfo } from 'shared/hooks/useViewportInfo';
 import { cn } from 'shared/helpers';
+import { LegacyRef, MutableRefObject, forwardRef } from 'react';
 
-export const FiltersSidebar = () => {
+export const FiltersSidebar = forwardRef((_, ref: LegacyRef<HTMLElement>) => {
     const { isDesktop } = useViewportInfo();
     return (
         <nav
+            ref={ref}
             className={cn(css.nav, {
                 [css.nav__mobile]: !isDesktop
             })}
@@ -23,4 +25,4 @@ export const FiltersSidebar = () => {
             </div>
         </nav>
     );
-};
+});

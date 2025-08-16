@@ -4,7 +4,7 @@ import { AsComponent, AsComponentProps } from 'shared/utils/as-component/types';
 
 import css from './Typography.module.scss';
 
-interface TypographyProps {
+export interface TypographyProps {
     familyFont: 'Consolas';
     weightFont: 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
     colorFont: 'black' | 'red';

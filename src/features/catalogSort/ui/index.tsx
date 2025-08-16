@@ -2,6 +2,7 @@ import { useUnit } from 'effector-react';
 import { SortingOptions } from 'entities/catalog/lib/constants';
 import { catalogIndicators } from 'features/catalog/model/filters-model/indicators';
 import React from 'react';
+import { useLang } from 'shared/hooks/useLang/useLang';
 import { Select } from 'shared/ui/Select';
 
 type CatalogSortProps = {
@@ -11,6 +12,8 @@ export const CatalogSort = (props: CatalogSortProps) => {
     const { className } = props;
     const { indicators, updateIndicators } = useUnit(catalogIndicators);
 
+    const { getLangKey } = useLang();
+
     const handleChangeSortWay = (name: string, value: number) => {
         updateIndicators({ [name]: value });
     };
@@ -18,7 +21,7 @@ export const CatalogSort = (props: CatalogSortProps) => {
     return (
         <Select
             name="sort"
-            inputPlacehoder="Отсортировать"
+            inputPlacehoder={getLangKey('to_sort').toString()}
             className={className}
             value={indicators.sort}
             options={SortingOptions}

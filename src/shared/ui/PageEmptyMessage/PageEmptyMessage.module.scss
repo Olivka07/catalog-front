@@ -1,0 +1,7 @@
+@import '../../styles/mixins.scss';
+
+.text {
+    padding: 30px 0;
+    color: var(--empty-message-color);
+    // @include adaptive-font(18, 24);
+}

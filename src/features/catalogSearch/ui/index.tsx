@@ -16,6 +16,11 @@ export const CatalogSearch = () => {
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
         updateCatalogIndicators({ search: e.target.value });
     };
+
+    const handleButtonClearSearchClick = () => {
+        updateCatalogIndicators({ search: '' });
+    };
+
     return (
         <>
             <InputField
@@ -29,6 +34,7 @@ export const CatalogSearch = () => {
             <Button
                 iconName="close"
                 theme="transparent"
+                onClick={handleButtonClearSearchClick}
                 className={css.close}
             />
         </>

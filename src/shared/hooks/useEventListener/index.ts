@@ -6,10 +6,10 @@ export const useEventListener = <K extends keyof DocumentEventMap>(
     target: HTMLElement | Document = document
 ) => {
     useEffect(() => {
-        target.addEventListener(type, listener);
+        if (target) target.addEventListener(type, listener);
 
         return () => {
-            target.removeEventListener(type, listener);
+            if (target) target.removeEventListener(type, listener);
         };
-    }, []);
+    }, [listener, target]);
 };

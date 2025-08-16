@@ -6,9 +6,12 @@ import css from './Navbar.module.scss';
 import { Typography } from 'shared/ui/Typography/Typography';
 import { useViewportInfo } from 'shared/hooks/useViewportInfo';
 import { cn } from 'shared/helpers';
+import { useLang } from 'shared/hooks/useLang/useLang';
 
 export const Navbar = () => {
     const { isDesktop } = useViewportInfo();
+    const { getLangKey } = useLang();
+
     return (
         <nav
             className={cn(css.navbar__container, {
@@ -16,10 +19,14 @@ export const Navbar = () => {
             })}
         >
             <NavLink path={routes.main} icon="catalog">
-                <Typography.h3 as="span">Каталог</Typography.h3>
+                <Typography.h3 as="span">
+                    {getLangKey('catalog').toString()}
+                </Typography.h3>
             </NavLink>
             <NavLink path={routes.about}>
-                <Typography.h3 as="span">Информация</Typography.h3>
+                <Typography.h3 as="span">
+                    {getLangKey('about').toString()}
+                </Typography.h3>
             </NavLink>
         </nav>
     );

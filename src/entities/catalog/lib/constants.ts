@@ -1,3 +1,4 @@
+import { getLangKeyInternal } from 'shared/helpers/getLangKeyInternal';
 import { SelectOption } from 'shared/types/select';
 
 export const CatalogSortingMethod = {
@@ -12,19 +13,19 @@ export type CatalogSortingMethodValue =
 
 export const SortingOptions: SelectOption[] = [
     {
-        label: 'Не выбрано',
+        label: getLangKeyInternal('no_select').toString(),
         value: CatalogSortingMethod.NO_SORTING
     },
     {
-        label: 'По возрастанию цены',
+        label: getLangKeyInternal('to_high_price').toString(),
         value: CatalogSortingMethod.PRICE_TO_HIGH
     },
     {
-        label: 'По убыванию цены',
+        label: getLangKeyInternal('to_low_price').toString(),
         value: CatalogSortingMethod.PRICE_TO_LOW
     },
     {
-        label: 'Сначала спец.предложение',
+        label: getLangKeyInternal('special_offer_forward').toString(),
         value: CatalogSortingMethod.SPECIAL_OFFER_FORWARD
     }
 ];
