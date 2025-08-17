@@ -7,6 +7,11 @@
 @import './adaptivity/mobile.scss';
 @import './adaptivity/tablet.scss';
 
+html {
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+}
+
 body,
 ul,
 ol,
