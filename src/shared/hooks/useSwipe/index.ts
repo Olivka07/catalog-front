@@ -1,6 +1,6 @@
 import { useEventListener } from '../useEventListener';
 
-const MIN_DISTANCE_FOR_SWIPE = 400;
+const MIN_DISTANCE_FOR_SWIPE = 100;
 
 type UseSwipeParams = {
     target?: HTMLElement | Document;
