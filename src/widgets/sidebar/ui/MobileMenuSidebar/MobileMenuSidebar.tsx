@@ -24,7 +24,8 @@ export const MobileMenuSidebar = () => {
     useSwipe({
         target: ref.current,
         cb: handleOutsideClick,
-        swipeMode: 'horizontal'
+        swipeMode: 'horizontal',
+        swipeSide: 'left'
     });
 
     return (
