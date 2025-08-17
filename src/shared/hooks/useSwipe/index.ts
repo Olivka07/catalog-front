@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react';
 import { useEventListener } from '../useEventListener';
 
 const MIN_DISTANCE_FOR_SWIPE = 40;
@@ -17,6 +18,9 @@ export const useSwipe = (params: UseSwipeParams) => {
         swipeDistance = MIN_DISTANCE_FOR_SWIPE
     } = params;
 
+    const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
+
     let startX: number;
     let startY: number;
 
@@ -31,8 +35,14 @@ export const useSwipe = (params: UseSwipeParams) => {
             const currentX = e.touches[0].clientX;
             const currentY = e.touches[0].clientY;
 
-            const xDistance = currentX - startX;
-            const yDistance = currentY - startY;
+            const diffX = currentX - startX;
+            const diffY = currentY - startY;
+
+            setX(diffX);
+            setY(diffY);
+
+            const xDistance = Math.abs(diffX);
+            const yDistance = Math.abs(diffY);
 
             switch (swipeMode) {
                 case 'horizontal':
@@ -53,4 +63,6 @@ export const useSwipe = (params: UseSwipeParams) => {
         },
         target
     );
+
+    return useMemo(() => [x, y], [x, y]);
 };
