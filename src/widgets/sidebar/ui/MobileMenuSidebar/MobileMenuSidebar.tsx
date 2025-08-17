@@ -21,7 +21,7 @@ export const MobileMenuSidebar = () => {
     }, [isMobileMenuShown]);
 
     useClickOutside(ref, handleOutsideClick, containerRef.current);
-    const [x] = useSwipe({
+    useSwipe({
         target: ref.current,
         cb: handleOutsideClick,
         swipeMode: 'horizontal'
@@ -34,7 +34,6 @@ export const MobileMenuSidebar = () => {
                 className={cn(css.mobileMenu, {
                     [css.openned]: isMobileMenuShown
                 })}
-                style={{ width: `calc(100% - ${x}px` }}
             >
                 <FiltersSidebar ref={ref} />
             </div>
