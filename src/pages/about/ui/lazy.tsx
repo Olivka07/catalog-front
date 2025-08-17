@@ -1,11 +1,8 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
+import { Loadable } from 'shared/ui';
 
-const PageComponent = lazy(() =>
-    import('./page/Page').then((module) => ({ default: module.Page }))
-);
-
-export const Page = () => (
-    <Suspense fallback={<div>...loading</div>}>
-        <PageComponent />
-    </Suspense>
+export const Page = Loadable(
+    lazy(() =>
+        import('./page/Page').then((module) => ({ default: module.Page }))
+    )
 );

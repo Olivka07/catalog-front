@@ -33,6 +33,7 @@ p {
     background-size: max(320px, 40vw);
     background-position: bottom right;
     background-color: var(--bg-main-color);
+    user-select: none;
 
     @include withThemeTransition;
 }
