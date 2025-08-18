@@ -22,6 +22,12 @@ export const useSwipe = (params: UseSwipeParams) => {
     let startX: number;
     let startY: number;
     let rafId: number;
+    let xDistance: number;
+    let yDistance: number;
+    let isRightSwipeSide: boolean;
+    let isLeftSwipeSide: boolean;
+    let isDownSwipeSide: boolean;
+    let isTopSwipeSide: boolean;
 
     useEventListener('touchstart', (e: TouchEvent) => {
         startX = e.touches[0].clientX;
@@ -34,44 +40,43 @@ export const useSwipe = (params: UseSwipeParams) => {
             const currentX = e.touches[0].clientX;
             const currentY = e.touches[0].clientY;
 
-            const diffX = currentX - startX;
-            const diffY = currentY - startY;
+            xDistance = currentX - startX;
+            yDistance = currentY - startY;
 
-            const isRightSwipeSide = diffX > 0;
-            const isLeftSwipeSide = diffX < 0;
-            const isDownSwipeSide = diffY > 0;
-            const isTopSwipeSide = diffY < 0;
-
-            const xDistance = Math.abs(diffX);
-            const yDistance = Math.abs(diffY);
+            isRightSwipeSide = xDistance > 0;
+            isLeftSwipeSide = xDistance < 0;
+            isDownSwipeSide = yDistance > 0;
+            isTopSwipeSide = yDistance < 0;
 
             switch (swipeMode) {
                 case 'horizontal':
                     if (
-                        xDistance >= swipeDistance &&
-                        ((swipeSide === 'left' && isLeftSwipeSide) ||
-                            (swipeSide === 'right' && isRightSwipeSide))
+                        (swipeSide === 'left' && isLeftSwipeSide) ||
+                        (swipeSide === 'right' && isRightSwipeSide)
                     ) {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
                         rafId = window.requestAnimationFrame(() => {
                             target.setAttribute(
                                 'style',
-                                `width: calc(100% + ${diffX}px`
+                                `width: calc(100% + ${xDistance}px;`
                             );
                         });
-                        cb();
                     }
                     break;
                 case 'vertical':
                     if (
-                        yDistance >= swipeDistance &&
-                        ((swipeSide === 'top' && isTopSwipeSide) ||
-                            (swipeSide === 'down' && isDownSwipeSide))
+                        (swipeSide === 'top' && isTopSwipeSide) ||
+                        (swipeSide === 'down' && isDownSwipeSide)
                     ) {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
-                        cb();
+                        rafId = window.requestAnimationFrame(() => {
+                            target.setAttribute(
+                                'style',
+                                `height: calc(100% - ${yDistance}px;`
+                            );
+                        });
                     }
                     break;
             }
@@ -80,6 +85,26 @@ export const useSwipe = (params: UseSwipeParams) => {
     );
 
     useEventListener('touchend', () => {
+        switch (swipeMode) {
+            case 'horizontal':
+                if (
+                    Math.abs(xDistance) >= swipeDistance &&
+                    ((swipeSide === 'left' && isLeftSwipeSide) ||
+                        (swipeSide === 'right' && isRightSwipeSide))
+                ) {
+                    cb();
+                }
+                break;
+            case 'vertical':
+                if (
+                    Math.abs(yDistance) >= swipeDistance &&
+                    ((swipeSide === 'top' && isTopSwipeSide) ||
+                        (swipeSide === 'down' && isDownSwipeSide))
+                ) {
+                    cb();
+                }
+        }
+
         if (rafId) {
             window.cancelAnimationFrame(rafId);
             rafId = null;
