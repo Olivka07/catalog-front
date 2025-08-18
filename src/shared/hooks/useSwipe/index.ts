@@ -20,11 +20,11 @@ export const useSwipe = (params: UseSwipeParams) => {
         swipeDistance = MIN_DISTANCE_FOR_SWIPE
     } = params;
 
+    let initStyle: string;
     let initWidth: number;
     let initHeight: number;
     let startX: number;
     let startY: number;
-    let rafId: number;
     let xDistance: number;
     let yDistance: number;
     let isRightSwipeSide: boolean;
@@ -35,6 +35,7 @@ export const useSwipe = (params: UseSwipeParams) => {
     const handleTouchStart = useEvent((e: TouchEvent) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
+        initStyle = target.getAttribute('style');
         initWidth = target.getBoundingClientRect().width;
         initHeight = target.getBoundingClientRect().height;
     });
@@ -61,10 +62,10 @@ export const useSwipe = (params: UseSwipeParams) => {
                     // предотвращает скролл, фиксируя только свайп
                     e.preventDefault();
                     const currentWidth = initWidth + xDistance;
-                    rafId = requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
                         target.style.width = `${currentWidth}px`;
-                        target.style.opacity = `${currentWidth} / ${initWidth}`;
-                        target.style.transition = 'all 0.1s ease';
+                        target.style.opacity = `${currentWidth / initWidth}`;
+                        target.style.transition = 'all 0.3s ease';
                     });
                 }
                 break;
@@ -75,11 +76,11 @@ export const useSwipe = (params: UseSwipeParams) => {
                 ) {
                     // предотвращает скролл, фиксируя только свайп
                     e.preventDefault();
-                    rafId = window.requestAnimationFrame(() => {
-                        target.setAttribute(
-                            'style',
-                            `height: calc(100% - ${yDistance}px);`
-                        );
+                    const currentHeight = initHeight - yDistance;
+                    requestAnimationFrame(() => {
+                        target.style.width = `${currentHeight}px`;
+                        target.style.opacity = `${currentHeight / initHeight}`;
+                        target.style.transition = 'all 0.3s ease';
                     });
                 }
                 break;
@@ -108,10 +109,9 @@ export const useSwipe = (params: UseSwipeParams) => {
                 }
         }
 
-        if (rafId) {
-            window.cancelAnimationFrame(rafId);
-            rafId = null;
-        }
+        requestAnimationFrame(() => {
+            target.setAttribute('style', initStyle);
+        });
     });
     useEventListener('touchend', handleTouchEnd);
 };
