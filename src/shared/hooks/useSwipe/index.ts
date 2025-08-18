@@ -19,6 +19,8 @@ export const useSwipe = (params: UseSwipeParams) => {
         swipeDistance = MIN_DISTANCE_FOR_SWIPE
     } = params;
 
+    let initWidth: number;
+    let initHeight: number;
     let startX: number;
     let startY: number;
     let rafId: number;
@@ -32,6 +34,8 @@ export const useSwipe = (params: UseSwipeParams) => {
     useEventListener('touchstart', (e: TouchEvent) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
+        initWidth = target.getBoundingClientRect().width;
+        initHeight = target.getBoundingClientRect().height;
     });
 
     useEventListener(
@@ -56,9 +60,10 @@ export const useSwipe = (params: UseSwipeParams) => {
                     ) {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
+                        const currentWidth = initWidth + xDistance;
                         target.setAttribute(
                             'style',
-                            `width: calc(100% + ${xDistance}px);`
+                            `width: ${currentWidth}px`
                         );
                     }
                     break;
