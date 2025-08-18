@@ -58,7 +58,7 @@ export const useSwipe = (params: UseSwipeParams) => {
                         e.preventDefault();
                         target.setAttribute(
                             'style',
-                            `width: calc(100% - 200px);`
+                            `width: calc(100% + ${xDistance}px);`
                         );
                     }
                     break;
