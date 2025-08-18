@@ -1,3 +1,4 @@
+import { useEvent } from '../useEvent';
 import { useEventListener } from '../useEventListener';
 
 const MIN_DISTANCE_FOR_SWIPE = 100;
@@ -31,62 +32,60 @@ export const useSwipe = (params: UseSwipeParams) => {
     let isDownSwipeSide: boolean;
     let isTopSwipeSide: boolean;
 
-    useEventListener('touchstart', (e: TouchEvent) => {
+    const handleTouchStart = useEvent((e: TouchEvent) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
         initWidth = target.getBoundingClientRect().width;
         initHeight = target.getBoundingClientRect().height;
     });
+    useEventListener('touchstart', handleTouchStart);
 
-    useEventListener(
-        'touchmove',
-        (e: TouchEvent) => {
-            const currentX = e.touches[0].clientX;
-            const currentY = e.touches[0].clientY;
+    const handleTouchMove = useEvent((e: TouchEvent) => {
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
 
-            xDistance = currentX - startX;
-            yDistance = currentY - startY;
+        xDistance = currentX - startX;
+        yDistance = currentY - startY;
 
-            isRightSwipeSide = xDistance > 0;
-            isLeftSwipeSide = xDistance < 0;
-            isDownSwipeSide = yDistance > 0;
-            isTopSwipeSide = yDistance < 0;
+        isRightSwipeSide = xDistance > 0;
+        isLeftSwipeSide = xDistance < 0;
+        isDownSwipeSide = yDistance > 0;
+        isTopSwipeSide = yDistance < 0;
 
-            switch (swipeMode) {
-                case 'horizontal':
-                    if (
-                        (swipeSide === 'left' && isLeftSwipeSide) ||
-                        (swipeSide === 'right' && isRightSwipeSide)
-                    ) {
-                        // предотвращает скролл, фиксируя только свайп
-                        e.preventDefault();
-                        const currentWidth = initWidth + xDistance;
-                        requestAnimationFrame(() => {
-                            target.style.width = `${currentWidth}px`;
-                        });
-                    }
-                    break;
-                case 'vertical':
-                    if (
-                        (swipeSide === 'top' && isTopSwipeSide) ||
-                        (swipeSide === 'down' && isDownSwipeSide)
-                    ) {
-                        // предотвращает скролл, фиксируя только свайп
-                        e.preventDefault();
-                        rafId = window.requestAnimationFrame(() => {
-                            target.setAttribute(
-                                'style',
-                                `height: calc(100% - ${yDistance}px);`
-                            );
-                        });
-                    }
-                    break;
-            }
-        },
-        target
-    );
+        switch (swipeMode) {
+            case 'horizontal':
+                if (
+                    (swipeSide === 'left' && isLeftSwipeSide) ||
+                    (swipeSide === 'right' && isRightSwipeSide)
+                ) {
+                    // предотвращает скролл, фиксируя только свайп
+                    e.preventDefault();
+                    const currentWidth = initWidth + xDistance;
+                    requestAnimationFrame(() => {
+                        target.style.width = `${currentWidth}px`;
+                    });
+                }
+                break;
+            case 'vertical':
+                if (
+                    (swipeSide === 'top' && isTopSwipeSide) ||
+                    (swipeSide === 'down' && isDownSwipeSide)
+                ) {
+                    // предотвращает скролл, фиксируя только свайп
+                    e.preventDefault();
+                    rafId = window.requestAnimationFrame(() => {
+                        target.setAttribute(
+                            'style',
+                            `height: calc(100% - ${yDistance}px);`
+                        );
+                    });
+                }
+                break;
+        }
+    });
+    useEventListener('touchmove', handleTouchMove, target);
 
-    useEventListener('touchend', () => {
+    const handleTouchEnd = useEvent(() => {
         switch (swipeMode) {
             case 'horizontal':
                 if (
@@ -112,4 +111,5 @@ export const useSwipe = (params: UseSwipeParams) => {
             rafId = null;
         }
     });
+    useEventListener('touchend', handleTouchEnd);
 };
