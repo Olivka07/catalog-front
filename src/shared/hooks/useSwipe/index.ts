@@ -59,7 +59,7 @@ export const useSwipe = (params: UseSwipeParams) => {
                         rafId = window.requestAnimationFrame(() => {
                             target.setAttribute(
                                 'style',
-                                `width: calc(100% + ${xDistance}px;`
+                                `width: calc(100% + ${xDistance}px);`
                             );
                         });
                     }
@@ -74,7 +74,7 @@ export const useSwipe = (params: UseSwipeParams) => {
                         rafId = window.requestAnimationFrame(() => {
                             target.setAttribute(
                                 'style',
-                                `height: calc(100% - ${yDistance}px;`
+                                `height: calc(100% - ${yDistance}px);`
                             );
                         });
                     }
