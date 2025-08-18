@@ -69,7 +69,7 @@ $mobileSize: 320;
 }
 
 @mixin withThemeTransition() {
-    transition: all 0.3s ease 0.2s;
+    // transition: all 0.3s ease 0.2s;
 }
 
 @mixin useDefaultScrollbarStyle($width: 7px) {
