@@ -65,7 +65,7 @@ export const useSwipe = (params: UseSwipeParams) => {
                     requestAnimationFrame(() => {
                         target.style.width = `${currentWidth}px`;
                         target.style.opacity = `${currentWidth / initWidth}`;
-                        target.style.transition = 'all 0.3s ease';
+                        target.style.transition = 'all 0.1s ease';
                     });
                 }
                 break;
@@ -80,7 +80,7 @@ export const useSwipe = (params: UseSwipeParams) => {
                     requestAnimationFrame(() => {
                         target.style.width = `${currentHeight}px`;
                         target.style.opacity = `${currentHeight / initHeight}`;
-                        target.style.transition = 'all 0.3s ease';
+                        target.style.transition = 'all 0.1s ease';
                     });
                 }
                 break;
