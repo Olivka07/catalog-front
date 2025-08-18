@@ -61,11 +61,9 @@ export const useSwipe = (params: UseSwipeParams) => {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
                         const currentWidth = initWidth + xDistance;
-                        alert(`${currentWidth}, ${initWidth}, ${xDistance}`);
-                        target.setAttribute(
-                            'style',
-                            `width: ${currentWidth}px`
-                        );
+                        requestAnimationFrame(() => {
+                            target.style.width = `${currentWidth}px`;
+                        });
                     }
                     break;
                 case 'vertical':
