@@ -56,12 +56,10 @@ export const useSwipe = (params: UseSwipeParams) => {
                     ) {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
-                        rafId = window.requestAnimationFrame(() => {
-                            target.setAttribute(
-                                'style',
-                                `width: calc(100% + ${xDistance}px);`
-                            );
-                        });
+                        target.setAttribute(
+                            'style',
+                            `width: calc(100% - 200px);`
+                        );
                     }
                     break;
                 case 'vertical':
