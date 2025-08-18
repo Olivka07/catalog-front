@@ -3,7 +3,7 @@ import { useEventListener } from '../useEventListener';
 const MIN_DISTANCE_FOR_SWIPE = 100;
 
 type UseSwipeParams = {
-    target?: HTMLElement | Document;
+    target: HTMLElement;
     swipeMode?: 'horizontal' | 'vertical';
     swipeSide?: 'left' | 'right' | 'top' | 'down';
     swipeDistance?: number;
@@ -13,7 +13,7 @@ type UseSwipeParams = {
 export const useSwipe = (params: UseSwipeParams) => {
     const {
         cb,
-        target = document,
+        target,
         swipeMode = 'horizontal',
         swipeSide = 'left',
         swipeDistance = MIN_DISTANCE_FOR_SWIPE
@@ -21,6 +21,7 @@ export const useSwipe = (params: UseSwipeParams) => {
 
     let startX: number;
     let startY: number;
+    let rafId: number;
 
     useEventListener('touchstart', (e: TouchEvent) => {
         startX = e.touches[0].clientX;
@@ -53,6 +54,12 @@ export const useSwipe = (params: UseSwipeParams) => {
                     ) {
                         // предотвращает скролл, фиксируя только свайп
                         e.preventDefault();
+                        rafId = window.requestAnimationFrame(() => {
+                            target.setAttribute(
+                                'style',
+                                `width: calc(100% + ${diffX}px`
+                            );
+                        });
                         cb();
                     }
                     break;
@@ -71,4 +78,11 @@ export const useSwipe = (params: UseSwipeParams) => {
         },
         target
     );
+
+    useEventListener('touchend', () => {
+        if (rafId) {
+            window.cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+    });
 };
