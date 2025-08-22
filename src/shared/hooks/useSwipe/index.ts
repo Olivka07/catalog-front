@@ -110,9 +110,7 @@ export const useSwipe = (params: UseSwipeParams) => {
         }
 
         requestAnimationFrame(() => {
-            setTimeout(() => {
-                target.setAttribute('style', initStyle);
-            }, 1000);
+            target.setAttribute('style', initStyle);
         });
     });
     useEventListener('touchend', handleTouchEnd);
