@@ -97,13 +97,6 @@ export const useSwipe = (params: UseSwipeParams) => {
                         (swipeSide === 'right' && isRightSwipeSide))
                 ) {
                     cb();
-                    requestAnimationFrame(() => {
-                        setTimeout(() => {
-                            target.setAttribute('style', initStyle);
-                        }, 300);
-                    });
-                } else {
-                    target.setAttribute('style', initStyle);
                 }
                 break;
             case 'vertical':
@@ -113,16 +106,10 @@ export const useSwipe = (params: UseSwipeParams) => {
                         (swipeSide === 'down' && isDownSwipeSide))
                 ) {
                     cb();
-                    requestAnimationFrame(() => {
-                        setTimeout(() => {
-                            target.setAttribute('style', initStyle);
-                        }, 300);
-                    });
-                } else {
-                    target.setAttribute('style', initStyle);
                 }
                 break;
         }
+        target.setAttribute('style', initStyle);
     });
     useEventListener('touchend', handleTouchEnd);
 };
