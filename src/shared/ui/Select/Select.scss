@@ -39,6 +39,7 @@
     box-shadow: 0px 2px 10px var(--modal-border-color);
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: var(--z-index-modal);
 
     cursor: pointer;
 
@@ -52,6 +53,11 @@
 
 .option {
     padding: 0 5px;
+
+    &:hover {
+        background-color: var(--bg-selected-option);
+    }
+
     .optionText {
         white-space: nowrap;
         overflow: hidden;

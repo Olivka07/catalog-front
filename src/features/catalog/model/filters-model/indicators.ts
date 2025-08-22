@@ -6,6 +6,7 @@ export const catalogIndicators = createIndicatorsControl<CatalogIndicators>({
         search: '',
         sort: null,
 
+        attend: false,
         bread: false,
         chocolate: false,
         drinking: false,

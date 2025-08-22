@@ -16,4 +16,5 @@ export type Product = {
     img?: ProductImageKey;
     description?: string;
     isSpecialOffer?: boolean;
+    isAbsent?: boolean; // отсутствует
 };

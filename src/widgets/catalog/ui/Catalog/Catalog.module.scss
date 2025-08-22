@@ -3,28 +3,43 @@
 .products {
     padding: 30px;
     overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
     max-height: 100%;
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(200px, auto));
+    gap: 20px;
+    justify-content: center;
 
     @include useDefaultScrollbarStyle();
 
+    @include fullhd() {
+        grid-template-columns: repeat(5, minmax(200px, auto));
+    }
+
+    @include hd1280() {
+        grid-template-columns: repeat(5, minmax(160px, auto));
+        gap: 15px;
+    }
+
+    @include tablet1024() {
+        grid-template-columns: repeat(4, minmax(160px, auto));
+    }
+
+    @include tablet900() {
+        grid-template-columns: repeat(3, minmax(160px, auto));
+    }
+
+    @include mobile768() {
+        grid-template-columns: repeat(2, minmax(160px, 200px));
+    }
+
+    @include mobile576() {
+        grid-template-columns: repeat(1, minmax(160px, 200px));
+    }
+
     &__item {
         cursor: pointer;
-        width: 200px;
-        flex-grow: 0;
-        margin: 0 20px 20px 20px;
-
-        @include mobile768 {
-            margin: 20px;
-        }
-
-        @include mobile576 {
-            &:nth-child(n) {
-                margin: 10px auto;
-            }
-        }
+        position: relative;
 
         .item__image {
             display: flex;
@@ -35,7 +50,6 @@
 
 .specialOffer {
     animation: shine 0.6s linear infinite alternate;
-    // box-shadow: 2px -4px 4px 9px rgb(255, 255, 0);
 }
 
 @keyframes shine {
@@ -45,4 +59,23 @@
     to {
         box-shadow: 0px 0px 4px 3px rgb(255 255 0 / 78%);
     }
+}
+
+.absent {
+    opacity: 0.5;
+    position: relative;
+}
+
+.absentText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--inverted-color-50);
+    box-shadow: 0px 2px 10px var(--modal-border-color);
+    border-radius: 7px;
+    z-index: 1;
+
+    @include withThemeTransition();
+    @include adaptive-font(18, 20);
 }

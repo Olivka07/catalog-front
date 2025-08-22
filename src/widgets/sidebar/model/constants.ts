@@ -4,6 +4,10 @@ import { Category } from 'entities/catalog';
 
 export const filters = [
     {
+        name: 'attend',
+        label: 'Есть в наличии'
+    },
+    {
         name: 'bread',
         label: 'Хлеб'
     },

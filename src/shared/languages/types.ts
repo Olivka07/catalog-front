@@ -1,5 +1,6 @@
 export type GetLangNumericKey = 'rubles' | 'coops';
 export type GetLangKey =
+    | 'absent'
     | 'catalog'
     | 'about'
     | 'search'

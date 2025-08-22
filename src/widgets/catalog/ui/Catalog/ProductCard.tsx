@@ -12,6 +12,7 @@ type ProductCardProps = {
 };
 export const ProductCard = (props: ProductCardProps) => {
     const { product } = props;
+    const { getLangKey } = useLang();
 
     const imgSrc = ProductImage[product.img];
 
@@ -25,8 +26,21 @@ export const ProductCard = (props: ProductCardProps) => {
             data-category={product.category}
             data-id={product.id}
         >
+            {product.isAbsent && (
+                <Typography.text
+                    fontAlign="center"
+                    weightFont={600}
+                    className={css.absentText}
+                >
+                    {getLangKey('absent').toString()}
+                </Typography.text>
+            )}
             <Card
-                className={cn({ [css.specialOffer]: product.isSpecialOffer })}
+                className={cn({
+                    [css.specialOffer]:
+                        product.isSpecialOffer && !product.isAbsent,
+                    [css.absent]: product.isAbsent
+                })}
             >
                 <Card.Header>
                     <Typography.card>

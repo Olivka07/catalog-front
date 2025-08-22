@@ -1,4 +1,5 @@
 import {
+    AttendIcon,
     BreadIcon,
     CatalogIcon,
     ChevronCloseIcon,
@@ -17,6 +18,7 @@ import {
 } from 'shared/assets/icons';
 
 export const IconMapper = {
+    attend: AttendIcon,
     bread: BreadIcon,
     catalog: CatalogIcon,
     chocolate: ChocolateIcon,

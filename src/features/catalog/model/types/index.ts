@@ -4,6 +4,7 @@ export type CatalogIndicators = {
     search: string;
     sort: CatalogSortingMethodValue;
 
+    attend: boolean; // есть в наличии
     bread: boolean;
     chocolate: boolean;
     drinking: boolean;

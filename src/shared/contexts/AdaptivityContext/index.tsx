@@ -40,9 +40,7 @@ export const AdaptivityContextProvider = ({
     const isLargeScreen = useMatchMedia(
         `(min-width: ${LargeScreenSize.width.min}px)`
     );
-    const isDesktop = useMatchMedia(
-        `(min-width: ${DesktopSize.width.min}px) and (max-width: ${DesktopSize.width.max}px)`
-    );
+    const isDesktop = useMatchMedia(`(min-width: ${DesktopSize.width.min}px)`);
     const isTablet = useMatchMedia(
         `(min-width: ${TabletSize.width.min}px) and (max-width: ${TabletSize.width.max}px)`
     );

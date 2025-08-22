@@ -1,3 +1,4 @@
+import AttendIcon from './absent.svg';
 import BreadIcon from './bread.svg';
 import CatalogIcon from './catalog.svg';
 import ChevronCloseIcon from './chevronClose.svg';
@@ -15,6 +16,7 @@ import VegetablesIcon from './vegetables.svg';
 import FruitsIcon from './fruits.svg';
 
 export {
+    AttendIcon,
     BreadIcon,
     CatalogIcon,
     ChevronCloseIcon,

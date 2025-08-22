@@ -26,6 +26,7 @@ export const $isSortSelected = $sort.map(
     (sort) => !!sort && sort !== CatalogSortingMethod.NO_SORTING
 );
 
+const $attend = catalogIndicators.$value.map(({ attend }) => attend);
 const $breadCategory = catalogIndicators.$value.map(({ bread }) => bread);
 const $drinkingCategory = catalogIndicators.$value.map(
     ({ drinking }) => drinking
@@ -62,17 +63,22 @@ const $categories = combine(
 );
 
 sample({
-    clock: [$categories, debounceSortChanged, debounceSearchChanged],
+    clock: [$attend, $categories, debounceSortChanged, debounceSearchChanged],
     source: {
+        attend: $attend,
         products: productModel.$products,
         search: $search,
         categories: $categories,
         sort: $sort
     },
-    fn: ({ categories, search, products, sort }) => {
+    fn: ({ attend, categories, search, products, sort }) => {
         let filtered = Object.values(categories).some(Boolean)
             ? products.filter((p) => categories[p.category])
             : products;
+
+        if (attend) {
+            filtered = filtered.filter((p) => !p.isAbsent);
+        }
 
         filtered = filtered.filter((product) =>
             isIncludeStr(
