@@ -7,3 +7,4 @@ import 'entities/user/public/model';
 
 //pages
 import 'pages/catalog/model';
+import 'pages/about/model';

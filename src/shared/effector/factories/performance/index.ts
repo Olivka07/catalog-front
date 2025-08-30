@@ -1,8 +1,3 @@
-import {
-    PerformanceUnitData,
-    PerformanceUnitTime,
-    PerformanceUnitValue
-} from '@apptracer/sdk';
 import { createFactory } from '@withease/factories';
 import { attach, createEvent, createStore, sample } from 'effector';
 import { tracerSdk } from 'shared/lib/performance';
