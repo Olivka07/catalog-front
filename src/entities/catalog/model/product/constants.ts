@@ -2,6 +2,72 @@ import { Product } from './types';
 import { createNewProduct } from './utils';
 
 export const products: Product[] = [
+    createNewProduct('Майонез провансаль Сдобри ведро', 'sauce', {
+        price: 240,
+        isSpecialOffer: true,
+        img: 'majonez_provancal_sdobri_vedro'
+    }),
+    createNewProduct('Торабика Капучино', 'teaCoffeeCacao', {
+        price: 22,
+        img: 'torabika_cappuccino'
+    }),
+    createNewProduct('Торабика Латте', 'teaCoffeeCacao', {
+        price: 22,
+        img: 'torabika_latte'
+    }),
+    createNewProduct('Нескафе 3 в 1', 'teaCoffeeCacao', {
+        price: 17,
+        img: 'nescafe_3_v_1'
+    }),
+    createNewProduct('Коровка бекова', 'chocolate', {
+        price: 270,
+        img: 'corovka_bekova'
+    }),
+    createNewProduct('Бековская сливочная помадка', 'chocolate', {
+        price: 310,
+        img: 'pomadka_bekova'
+    }),
+    createNewProduct('Лукум', 'chocolate', {
+        price: 250,
+        img: 'lukum'
+    }),
+    createNewProduct('Пряники Подмосковные', 'chocolate', {
+        price: 195,
+        img: 'pryaniki_podmoskovnyje'
+    }),
+    createNewProduct('Пряники шоколадные', 'chocolate', {
+        price: 230,
+        img: 'pryaniki_shokoladnye'
+    }),
+    createNewProduct('Пряники мраморные', 'chocolate', {
+        price: 200,
+        img: 'pryaniki_podmoskovnyje'
+    }),
+    createNewProduct('Пряники северные', 'chocolate', {
+        price: 190,
+        img: 'pryaniki_podmoskovnyje'
+    }),
+    createNewProduct('Пряники шоколадно-апельсиновые', 'chocolate', {
+        price: 220,
+        img: 'pryaniki_shokoladno_apelsinovyje'
+    }),
+    createNewProduct('Тетради 12л клетка/линейка', 'chancellery', {
+        price: 5,
+        isSpecialOffer: true,
+        img: 'tetad'
+    }),
+    createNewProduct('Молоко Пестравка ТФА', 'milk', {
+        price: 120,
+        img: 'moloko_pestravka_tfa'
+    }),
+    createNewProduct('Молоко Пестравка 1.5л', 'milk', {
+        price: 217,
+        img: 'moloko_pestravka_1500_ml'
+    }),
+    createNewProduct('Молоко Добрая Бурёнка ТФА', 'milk', {
+        price: 125,
+        img: 'moloko_dobrya_burenka_tfa'
+    }),
     createNewProduct('Волжские просторы', 'chocolate', {
         price: 750,
         isSpecialOffer: false,
@@ -97,8 +163,5 @@ export const products: Product[] = [
         price: 55,
         isSpecialOffer: false,
         img: 'tea_princess_java_green_25'
-    }),
-    createNewProduct('Молочный коктейль', 'milk', {
-        price: 50
     })
 ];

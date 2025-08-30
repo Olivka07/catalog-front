@@ -6,10 +6,12 @@ export type CatalogIndicators = {
 
     attend: boolean; // есть в наличии
     bread: boolean;
+    chancellery: boolean;
     chocolate: boolean;
     drinking: boolean;
     fruits: boolean;
     milk: boolean;
+    sauce: boolean;
     teaCoffeeCacao: boolean;
     vegetables: boolean;
 };

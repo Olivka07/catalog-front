@@ -34,6 +34,14 @@ export const filters = [
     {
         name: 'fruits',
         label: 'Фрукты и ягоды'
+    },
+    {
+        name: 'sauce',
+        label: 'Соусы'
+    },
+    {
+        name: 'chancellery',
+        label: 'Канцтовары'
     }
 ] as const;
 

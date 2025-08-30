@@ -6,35 +6,35 @@
     max-height: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(6, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     gap: 20px;
     justify-content: center;
 
     @include useDefaultScrollbarStyle();
 
     @include fullhd() {
-        grid-template-columns: repeat(5, minmax(200px, auto));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     }
 
     @include hd1280() {
-        grid-template-columns: repeat(5, minmax(160px, auto));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
         gap: 15px;
     }
 
     @include tablet1024() {
-        grid-template-columns: repeat(4, minmax(160px, auto));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
     }
 
     @include tablet900() {
-        grid-template-columns: repeat(3, minmax(160px, auto));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
     }
 
     @include mobile768() {
-        grid-template-columns: repeat(2, minmax(160px, 200px));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
     }
 
     @include mobile576() {
-        grid-template-columns: repeat(1, minmax(160px, 200px));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
     }
 
     &__item {

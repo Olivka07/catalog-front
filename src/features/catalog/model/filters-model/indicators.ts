@@ -9,9 +9,11 @@ export const catalogIndicators = createIndicatorsControl<CatalogIndicators>({
         attend: false,
         bread: false,
         chocolate: false,
+        chancellery: false,
         drinking: false,
         fruits: false,
         milk: false,
+        sauce: false,
         teaCoffeeCacao: false,
         vegetables: false
     }

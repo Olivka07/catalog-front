@@ -31,6 +31,9 @@ const $breadCategory = catalogIndicators.$value.map(({ bread }) => bread);
 const $drinkingCategory = catalogIndicators.$value.map(
     ({ drinking }) => drinking
 );
+const $chancelleryCategory = catalogIndicators.$value.map(
+    ({ chancellery }) => chancellery
+);
 const $chocolateCategory = catalogIndicators.$value.map(
     ({ chocolate }) => chocolate
 );
@@ -38,6 +41,7 @@ const $teaCoffeeCacaoCategory = catalogIndicators.$value.map(
     ({ teaCoffeeCacao }) => teaCoffeeCacao
 );
 const $milkCategory = catalogIndicators.$value.map(({ milk }) => milk);
+const $sauceCategory = catalogIndicators.$value.map(({ sauce }) => sauce);
 const $vegetables = catalogIndicators.$value.map(
     ({ vegetables }) => vegetables
 );
@@ -45,18 +49,32 @@ const $fruits = catalogIndicators.$value.map(({ fruits }) => fruits);
 
 const $categories = combine(
     $breadCategory,
+    $chancelleryCategory,
     $chocolateCategory,
     $drinkingCategory,
     $fruits,
     $milkCategory,
+    $sauceCategory,
     $teaCoffeeCacaoCategory,
     $vegetables,
-    (bread, chocolate, drinking, fruits, milk, teaCoffeeCacao, vegetables) => ({
+    (
         bread,
+        chancellery,
         chocolate,
         drinking,
         fruits,
         milk,
+        sauce,
+        teaCoffeeCacao,
+        vegetables
+    ) => ({
+        bread,
+        chancellery,
+        chocolate,
+        drinking,
+        fruits,
+        milk,
+        sauce,
         teaCoffeeCacao,
         vegetables
     })

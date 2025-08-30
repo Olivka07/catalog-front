@@ -5,6 +5,7 @@ import BonTime from './bon_time.jpg';
 import Bun from './bun.jpg';
 import ChioRio from './chio_rio.png';
 import ChocoPieJashki from './choco_pie_jashki.png';
+import CorovkaBekova from './corovka_bekova.jpg';
 import Elle from './elle.jpg';
 import FruttoBello from './frutto_bello.png';
 import Furor from './furor.jpg';
@@ -13,8 +14,21 @@ import GlaseSShokoladom from './glase_s_shokoladom.png';
 import Haritosha from './haritosha.jpg';
 import HippoBondiMarmelad from './hippo_bondi_marmelad.png';
 import Jumka from './jumka.jpg';
+import Lukum from './lukum.jpg';
 import LussoSmorodina from './lusso_smorodina.jpg';
+import MajonezProvancalSdobriVedro from './majonez_provancal_sdobri_vedro.jpg';
+import MolokoDobryaBurenkaTfa from './moloko_dobrya_burenka_tfa.jpg';
+import MolokoPestravkaTfa from './moloko_pestravka_tfa.png';
+import MolokoPestravka1500Ml from './moloko_pestravka_1500_ml.jpg';
+import Nescafe3V1 from './nescafe_3_v_1.jpg';
+import PomadkaBekova from './pomadka_bekova.jpg';
+import PryanikiPodmoskovnyje from './pryaniki_podmoskovnyje.jpg';
+import PryanikiShokoladnoApelsinovyje from './pryaniki_shokoladno_apelsinovyje.png';
+import PryanikiShokoladnye from './pryaniki_shokoladnye.png';
 import TeaPrincessJavaGreen25 from './tea_princess_java_green_25.jpg';
+import Tetrad from './tetrad.jpeg';
+import TorabikaCappuccino from './torabika_cappuccino.jpg';
+import TorabikaLatte from './torabika_latte.png';
 import TortVafelnyFundukJashki from './tort_vafelniy_funduk_jashki.jpg';
 import Versale from './versale.png';
 import VoljskieProstori from './voljskie_prostori.jpg';
@@ -29,6 +43,7 @@ export const ProductImage = {
     bun: Bun,
     chio_rio: ChioRio,
     choco_pie_jashki: ChocoPieJashki,
+    corovka_bekova: CorovkaBekova,
     elle: Elle,
     frutto_bello: FruttoBello,
     furor: Furor,
@@ -37,8 +52,21 @@ export const ProductImage = {
     haritosha: Haritosha,
     hippo_bondi_marmelad: HippoBondiMarmelad,
     jumka: Jumka,
+    lukum: Lukum,
     lusso_smorodina: LussoSmorodina,
+    majonez_provancal_sdobri_vedro: MajonezProvancalSdobriVedro,
+    moloko_dobrya_burenka_tfa: MolokoDobryaBurenkaTfa,
+    moloko_pestravka_tfa: MolokoPestravkaTfa,
+    moloko_pestravka_1500_ml: MolokoPestravka1500Ml,
+    nescafe_3_v_1: Nescafe3V1,
+    pomadka_bekova: PomadkaBekova,
+    pryaniki_podmoskovnyje: PryanikiPodmoskovnyje,
+    pryaniki_shokoladno_apelsinovyje: PryanikiShokoladnoApelsinovyje,
+    pryaniki_shokoladnye: PryanikiShokoladnye,
     tea_princess_java_green_25: TeaPrincessJavaGreen25,
+    tetad: Tetrad,
+    torabika_cappuccino: TorabikaCappuccino,
+    torabika_latte: TorabikaLatte,
     tort_vafelniy_funduk_jashki: TortVafelnyFundukJashki,
     versale: Versale,
     voljskie_prostori: VoljskieProstori,
