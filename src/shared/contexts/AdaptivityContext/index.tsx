@@ -1,5 +1,7 @@
+import { useUnit } from 'effector-react';
 import { ReactNode, createContext, useMemo } from 'react';
 import { useMatchMedia, useResizeObserver } from 'shared/hooks';
+import { appModel } from 'shared/model';
 import {
     DesktopSize,
     LargeScreenSize,
@@ -37,6 +39,10 @@ type AdaptivityContextProviderProps = {
 export const AdaptivityContextProvider = ({
     children
 }: AdaptivityContextProviderProps) => {
+    const [setIsDesktop, setIsMobile] = useUnit([
+        appModel.setIsDesktop,
+        appModel.setIsMobile
+    ]);
     const isLargeScreen = useMatchMedia(
         `(min-width: ${LargeScreenSize.width.min}px)`
     );
@@ -49,6 +55,9 @@ export const AdaptivityContextProvider = ({
     const [_, size] = useResizeObserver({ querySelector: '#root' });
 
     const value = useMemo(() => {
+        setIsDesktop(isDesktop);
+        setIsMobile(isMobile);
+
         return {
             isLargeScreen,
             isDesktop,

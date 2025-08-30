@@ -7,8 +7,6 @@ export const currentRoute = routes.main;
 
 const redirectToCatalogRouteFx = attach({ effect: routes.catalog.open });
 
-currentRoute.opened.watch(() => console.log('main route opened'));
-
 export const redirectedFromMainToCatalogRoute = chainRoute({
     route: currentRoute,
     beforeOpen: {

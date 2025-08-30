@@ -1,8 +1,17 @@
+import { useUnit } from 'effector-react';
+import { aboutPageModel } from 'pages/about/model';
+import { useEffect } from 'react';
 import { Spacing } from 'shared/ui/Spacing';
 import { Typography } from 'shared/ui/Typography/Typography';
 import { PageWrapper } from 'widgets/layouts/ui/Page/Page';
 
 export const Page = (): JSX.Element => {
+    const triggerIsPageMounted = useUnit(aboutPageModel.isPageMountedTriggered);
+
+    useEffect(() => {
+        triggerIsPageMounted();
+    }, []);
+
     return (
         <PageWrapper>
             <Spacing size={20} />

@@ -17,3 +17,6 @@ declare module '*.svg' {
     const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;
 }
+
+declare const __APP_TRACER_TOKEN__: string | null;
+declare const __IS_DEV__: boolean;

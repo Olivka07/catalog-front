@@ -1,3 +1,2 @@
-import { routes } from 'shared/router';
-
-export const currentRoute = routes.about;
+export { currentRoute, isPageMountedTriggered } from './model';
+import './analytics';

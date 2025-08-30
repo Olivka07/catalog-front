@@ -11,9 +11,11 @@ export interface BuildOptions {
     mode: TypeMode;
     isDev: boolean;
     port: number;
+    appTracerToken: string | null;
 }
 
 export interface EnvOptions {
     port: number;
     mode: TypeMode;
+    appTracerToken?: string;
 }

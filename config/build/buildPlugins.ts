@@ -5,7 +5,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function buildPlugins({
     paths,
-    isDev
+    isDev,
+    appTracerToken
 }: BuildOptions): WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
@@ -17,7 +18,8 @@ export function buildPlugins({
             chunkFilename: './css/[name].[contenthash:8].css'
         }),
         new DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev)
+            __IS_DEV__: JSON.stringify(isDev),
+            __APP_TRACER_TOKEN__: JSON.stringify(appTracerToken)
         })
     ];
 }

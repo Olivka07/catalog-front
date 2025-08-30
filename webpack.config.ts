@@ -11,6 +11,7 @@ export default (env: EnvOptions) => {
     const mode: TypeMode = env.mode || 'development';
     const isDev = mode === 'development';
     const PORT = env.port || 3000;
+    const APP_TRACER_TOKEN = env.appTracerToken ?? null;
 
     const paths: TypePaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -24,7 +25,8 @@ export default (env: EnvOptions) => {
         mode,
         paths,
         isDev,
-        port: PORT
+        port: PORT,
+        appTracerToken: APP_TRACER_TOKEN
     };
 
     const config = buildWebpackConfig(options);

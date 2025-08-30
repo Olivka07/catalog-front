@@ -1,4 +1,4 @@
-import { combine, createStore, sample } from 'effector';
+import { combine, createEvent, createStore, sample } from 'effector';
 import { Product, productModel } from 'entities/catalog';
 import { CatalogSortingMethod } from 'entities/catalog/lib/constants';
 import { catalogIndicators } from 'features/catalog/model/filters-model/indicators';
@@ -108,3 +108,5 @@ querySync({
     route: currentRoute,
     control: catalogIndicators
 });
+
+export const isPageMountedTriggered = createEvent();
