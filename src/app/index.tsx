@@ -10,7 +10,6 @@ import { useViewportInfo } from 'shared/hooks/useViewportInfo';
 import { ModalWrapper } from 'shared/ui/Modal/ModalWrapper';
 import { ModalPage } from 'shared/ui/Modal/ModalPage';
 import { MENU_MODAL, VEDRO_MODAL } from 'shared/model/modals/constants';
-import { MenuModal } from 'modals/menu';
 import { VedroModal } from 'modals/vedro';
 
 const App = () => {

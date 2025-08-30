@@ -1,0 +1,3 @@
+{
+    "presets": ["@babel/preset-env", "atomic-router/babel-preset"]
+}

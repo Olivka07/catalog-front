@@ -1,5 +1,4 @@
 import { createHistoryRouter, createRoute } from 'atomic-router';
-import { createBrowserHistory } from 'history';
 
 export const Paths = {
     Main: '/',

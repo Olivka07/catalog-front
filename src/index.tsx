@@ -11,6 +11,6 @@ const history = createBrowserHistory();
 router.setHistory(history);
 
 const root = createRoot(document.getElementById('root'));
-initApp();
 
+initApp();
 root.render(<App />);
