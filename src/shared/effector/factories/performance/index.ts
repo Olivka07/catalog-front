@@ -36,6 +36,7 @@ export const pagePerformanceSendModelFactory = createFactory(
             ) => {
                 const endTime = new Date().getTime() - startTime;
                 const pseudoSample = new Error(sampleName);
+
                 tracerSdk?.error(pseudoSample, {
                     keys: {
                         unauthId: unauthId,
