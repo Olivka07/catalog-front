@@ -20,13 +20,22 @@ export const Page = (): JSX.Element => {
             </Typography.h1>
             <Spacing size={20} />
             <article>
-                <Typography.text weightFont={700} isInline>
-                    Адрес:
-                </Typography.text>{' '}
-                <Typography.text isInline>
-                    Самарская обл., Кошкинский р-н, ст. Погрузная, ул. Школьная,
-                    10
-                </Typography.text>
+                <div>
+                    <Typography.text weightFont={700} isInline>
+                        Адрес:
+                    </Typography.text>{' '}
+                    <Typography.text isInline>
+                        Самарская обл., Кошкинский р-н, ст. Погрузная, ул.
+                        Школьная, 10
+                    </Typography.text>
+                </div>
+                <Spacing size={20} />
+                <div>
+                    <Typography.text weightFont={700} isInline>
+                        График работы:
+                    </Typography.text>{' '}
+                    <Typography.text isInline>08:00-20:00</Typography.text>
+                </div>
             </article>
         </PageWrapper>
     );

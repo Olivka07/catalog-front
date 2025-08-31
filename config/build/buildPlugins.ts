@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { WebpackPluginInstance, ProgressPlugin, DefinePlugin } from 'webpack';
 import { BuildOptions } from './types';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'node:path';
 
 export function buildPlugins({
     paths,
@@ -10,7 +11,8 @@ export function buildPlugins({
 }: BuildOptions): WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
-            template: paths.html
+            template: paths.html,
+            favicon: path.resolve(paths.public, 'favicon.ico')
         }),
         new ProgressPlugin(),
         new MiniCssExtractPlugin({
