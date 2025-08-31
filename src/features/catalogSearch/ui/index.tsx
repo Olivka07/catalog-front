@@ -28,6 +28,7 @@ export const CatalogSearch = () => {
                 onChange={handleSearchChange}
                 value={search}
                 autoComplete="off"
+                enterKeyHint="search"
                 className={css.search}
                 placeholder={getLangKey('search').toString()}
             />

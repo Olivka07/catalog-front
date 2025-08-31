@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useEvent } from '../useEvent';
 import { useEventListener } from '../useEventListener';
 
@@ -32,10 +33,15 @@ export const useSwipe = (params: UseSwipeParams) => {
     let isDownSwipeSide: boolean;
     let isTopSwipeSide: boolean;
 
+    useEffect(() => {
+        if (target) {
+            initStyle = target.getAttribute('style');
+        }
+    }, []);
+
     const handleTouchStart = useEvent((e: TouchEvent) => {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
-        initStyle = target.getAttribute('style');
         initWidth = target.getBoundingClientRect().width;
         initHeight = target.getBoundingClientRect().height;
     });
