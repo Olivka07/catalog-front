@@ -1,14 +1,14 @@
 export type GetLangNumericKey = 'rubles' | 'coops';
 export type GetLangKey =
+    | 'about'
     | 'absent'
     | 'catalog'
-    | 'about'
-    | 'search'
     | 'empty_catalog'
-    | 'to_high_price'
+    | 'kg'
     | 'no_select'
-    | 'to_low_price'
-    | 'special_offer_forward'
-    | 'to_sort'
     | 'search'
+    | 'special_offer_forward'
+    | 'to_high_price'
+    | 'to_low_price'
+    | 'to_sort'
     | 'to_up';

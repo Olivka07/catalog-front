@@ -44,6 +44,13 @@
         .item__image {
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            .img {
+                max-height: 200px;
+                width: auto;
+                max-width: 100%;
+            }
         }
     }
 }

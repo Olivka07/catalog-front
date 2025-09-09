@@ -2,10 +2,52 @@ import { Product } from './types';
 import { createNewProduct } from './utils';
 
 export const products: Product[] = [
+    createNewProduct('Ветчина «Альми»', 'sausageMeat', {
+        price: 605,
+        isSpecialOffer: false,
+        img: 'vetchina_almi',
+        measure: 'kg'
+    }),
+    createNewProduct('Ветчина «Классическая»', 'sausageMeat', {
+        price: 655,
+        isSpecialOffer: false,
+        img: 'vetchina_classicheskaya',
+        measure: 'kg'
+    }),
+    createNewProduct('Колбаса «Молочная» (0.5кг)', 'sausageMeat', {
+        price: 360,
+        isSpecialOffer: false,
+        img: 'kolbasa_molochnaya_05'
+    }),
+    createNewProduct('Колбаса «Домашняя»', 'sausageMeat', {
+        price: 425,
+        isSpecialOffer: false,
+        img: 'kolbasa_domashnaya',
+        measure: 'kg'
+    }),
+    createNewProduct('Колбаса «Дельная»', 'sausageMeat', {
+        price: 530,
+        isSpecialOffer: false,
+        img: 'kolbasa_delnaya',
+        measure: 'kg'
+    }),
+    createNewProduct('Колбаса «Невская»', 'sausageMeat', {
+        price: 450,
+        isSpecialOffer: false,
+        img: 'kolbasa_nevskaya',
+        measure: 'kg'
+    }),
+    createNewProduct('Колбаса «К столу»', 'sausageMeat', {
+        price: 592,
+        isSpecialOffer: false,
+        img: 'kolbasa_k_stolu',
+        measure: 'kg'
+    }),
     createNewProduct('Колбаса «Купеческая»', 'sausageMeat', {
         price: 502,
         isSpecialOffer: false,
-        img: 'kolbasa_kupecheskaya'
+        img: 'kolbasa_kupecheskaya',
+        measure: 'kg'
     }),
     createNewProduct('Шоколад Милка в ассорт.', 'chocolate', {
         price: 90,

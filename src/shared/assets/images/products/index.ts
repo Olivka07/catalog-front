@@ -14,7 +14,12 @@ import GlaseSShokoladom from './glase_s_shokoladom.png';
 import Haritosha from './haritosha.jpg';
 import HippoBondiMarmelad from './hippo_bondi_marmelad.png';
 import Jumka from './jumka.jpg';
+import KolbasaDelnaya from './kolbasa_delnaya.jpg';
+import KolbasaDomashnaya from './kolbasa_domashnaya.jpg';
 import KolbasaKupecheskaya from './kolbasa_kupecheskaya.jpg';
+import KolbasaMolochnaya05 from './kolbasa_molochnaya_05.jpg';
+import KolbasaNevskaya from './kolbasa_nevskaya.jpg';
+import KolbasaKStolu from './kolbasa_k_stolu.png';
 import Lukum from './lukum.jpg';
 import LussoSmorodina from './lusso_smorodina.jpg';
 import MajonezProvancalSdobriVedro from './majonez_provancal_sdobri_vedro.jpg';
@@ -33,6 +38,8 @@ import TorabikaCappuccino from './torabika_cappuccino.jpg';
 import TorabikaLatte from './torabika_latte.png';
 import TortVafelnyFundukJashki from './tort_vafelniy_funduk_jashki.jpg';
 import Versale from './versale.png';
+import VetchinaAlmi from './vetchina_almi.jpg';
+import VetchinaClassicheskaya from './vetchina_classicheskaya.jpg';
 import VoljskieProstori from './voljskie_prostori.jpg';
 
 import NoPhoto from './no_photo.png';
@@ -54,7 +61,12 @@ export const ProductImage = {
     haritosha: Haritosha,
     hippo_bondi_marmelad: HippoBondiMarmelad,
     jumka: Jumka,
+    kolbasa_delnaya: KolbasaDelnaya,
+    kolbasa_domashnaya: KolbasaDomashnaya,
     kolbasa_kupecheskaya: KolbasaKupecheskaya,
+    kolbasa_molochnaya_05: KolbasaMolochnaya05,
+    kolbasa_nevskaya: KolbasaNevskaya,
+    kolbasa_k_stolu: KolbasaKStolu,
     lukum: Lukum,
     lusso_smorodina: LussoSmorodina,
     majonez_provancal_sdobri_vedro: MajonezProvancalSdobriVedro,
@@ -73,6 +85,8 @@ export const ProductImage = {
     torabika_latte: TorabikaLatte,
     tort_vafelniy_funduk_jashki: TortVafelnyFundukJashki,
     versale: Versale,
+    vetchina_almi: VetchinaAlmi,
+    vetchina_classicheskaya: VetchinaClassicheskaya,
     voljskie_prostori: VoljskieProstori,
 
     noPhoto: NoPhoto
