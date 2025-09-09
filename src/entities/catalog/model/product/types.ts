@@ -7,6 +7,7 @@ export type Category =
     | 'chocolate'
     | 'milk'
     | 'sauce'
+    | 'sausageMeat'
     | 'teaCoffeeCacao'
     | 'vegetables';
 

@@ -14,9 +14,11 @@ import GlaseSShokoladom from './glase_s_shokoladom.png';
 import Haritosha from './haritosha.jpg';
 import HippoBondiMarmelad from './hippo_bondi_marmelad.png';
 import Jumka from './jumka.jpg';
+import KolbasaKupecheskaya from './kolbasa_kupecheskaya.jpg';
 import Lukum from './lukum.jpg';
 import LussoSmorodina from './lusso_smorodina.jpg';
 import MajonezProvancalSdobriVedro from './majonez_provancal_sdobri_vedro.jpg';
+import Milka from './milka.jpg';
 import MolokoDobryaBurenkaTfa from './moloko_dobrya_burenka_tfa.jpg';
 import MolokoPestravkaTfa from './moloko_pestravka_tfa.png';
 import MolokoPestravka1500Ml from './moloko_pestravka_1500_ml.jpg';
@@ -52,9 +54,11 @@ export const ProductImage = {
     haritosha: Haritosha,
     hippo_bondi_marmelad: HippoBondiMarmelad,
     jumka: Jumka,
+    kolbasa_kupecheskaya: KolbasaKupecheskaya,
     lukum: Lukum,
     lusso_smorodina: LussoSmorodina,
     majonez_provancal_sdobri_vedro: MajonezProvancalSdobriVedro,
+    milka: Milka,
     moloko_dobrya_burenka_tfa: MolokoDobryaBurenkaTfa,
     moloko_pestravka_tfa: MolokoPestravkaTfa,
     moloko_pestravka_1500_ml: MolokoPestravka1500Ml,

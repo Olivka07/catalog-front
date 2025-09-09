@@ -12,6 +12,7 @@ export type CatalogIndicators = {
     fruits: boolean;
     milk: boolean;
     sauce: boolean;
+    sausageMeat: boolean;
     teaCoffeeCacao: boolean;
     vegetables: boolean;
 };

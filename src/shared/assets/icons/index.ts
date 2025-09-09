@@ -11,6 +11,7 @@ import MenuIcon from './menu.svg';
 import MenuNavigationIcon from './menu_navigation.svg';
 import MilkIcon from './milk.svg';
 import SauceIcon from './sauce.svg';
+import SausageMeatIcon from './sausage_meat.svg';
 import SearchIcon from './search.svg';
 import SortIcon from './sort.svg';
 import TeaCoffeeCacaoIcon from './teaCoffeeCacao.svg';
@@ -32,6 +33,7 @@ export {
     MenuNavigationIcon,
     MilkIcon,
     SauceIcon,
+    SausageMeatIcon,
     SearchIcon,
     SortIcon,
     TeaCoffeeCacaoIcon,

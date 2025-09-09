@@ -2,6 +2,16 @@ import { Product } from './types';
 import { createNewProduct } from './utils';
 
 export const products: Product[] = [
+    createNewProduct('Колбаса «Купеческая»', 'sausageMeat', {
+        price: 502,
+        isSpecialOffer: false,
+        img: 'kolbasa_kupecheskaya'
+    }),
+    createNewProduct('Шоколад Милка в ассорт.', 'chocolate', {
+        price: 90,
+        isSpecialOffer: true,
+        img: 'milka'
+    }),
     createNewProduct('Майонез провансаль Сдобри ведро', 'sauce', {
         price: 240,
         isSpecialOffer: true,

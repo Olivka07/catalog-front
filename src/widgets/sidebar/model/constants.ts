@@ -16,6 +16,10 @@ export const filters = [
         label: 'Напитки'
     },
     {
+        name: 'sausageMeat',
+        label: 'Мясные (колбасные) изделия'
+    },
+    {
         name: 'chocolate',
         label: 'Кондитерские изделия'
     },
