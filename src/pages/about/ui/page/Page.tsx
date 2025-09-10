@@ -47,7 +47,9 @@ export const Page = (): JSX.Element => {
                     <Typography.text isInline>08:00-20:00</Typography.text>
                 </div>
             </article>
-            <a href="https://vk.com" target="_blank" onClick={clickHandle}></a>
+            <a href="https://vk.com" target="_blank" onClick={clickHandle}>
+                aaa
+            </a>
         </PageWrapper>
     );
 };
