@@ -1,7 +1,6 @@
 import { useUnit } from 'effector-react';
 import { aboutPageModel } from 'pages/about/model';
 import { useEffect } from 'react';
-import { Button } from 'shared/ui';
 import { Spacing } from 'shared/ui/Spacing';
 import { Typography } from 'shared/ui/Typography/Typography';
 import { PageWrapper } from 'widgets/layouts/ui/Page/Page';
@@ -12,13 +11,6 @@ export const Page = (): JSX.Element => {
     useEffect(() => {
         triggerIsPageMounted();
     }, []);
-
-    const handleClick = () => {
-        const a = document.createElement('a');
-        a.target = '_blank';
-        a.href = 'https://vk.com';
-        a.click();
-    };
 
     return (
         <PageWrapper>
@@ -45,7 +37,6 @@ export const Page = (): JSX.Element => {
                     <Typography.text isInline>08:00-20:00</Typography.text>
                 </div>
             </article>
-            <Button onClick={handleClick}>Клик</Button>
         </PageWrapper>
     );
 };
