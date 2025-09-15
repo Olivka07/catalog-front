@@ -12,16 +12,6 @@ export const Page = (): JSX.Element => {
         triggerIsPageMounted();
     }, []);
 
-    const clickHandle = async () => {
-        alert('0');
-        await new Promise((res) => {
-            setTimeout(() => {
-                res('');
-            }, 10000);
-        });
-        alert('asd!!!');
-    };
-
     return (
         <PageWrapper>
             <Spacing size={20} />
@@ -47,9 +37,6 @@ export const Page = (): JSX.Element => {
                     <Typography.text isInline>08:00-20:00</Typography.text>
                 </div>
             </article>
-            <a href="https://vk.com" target="_blank" onClick={clickHandle}>
-                aaa
-            </a>
         </PageWrapper>
     );
 };
