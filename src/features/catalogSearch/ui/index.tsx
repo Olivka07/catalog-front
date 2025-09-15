@@ -22,7 +22,7 @@ export const CatalogSearch = () => {
     };
 
     return (
-        <>
+        <div className={css.searchContainer}>
             <InputField
                 name="search"
                 onChange={handleSearchChange}
@@ -38,6 +38,6 @@ export const CatalogSearch = () => {
                 onClick={handleButtonClearSearchClick}
                 className={css.close}
             />
-        </>
+        </div>
     );
 };

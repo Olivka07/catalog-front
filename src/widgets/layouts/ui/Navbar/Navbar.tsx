@@ -18,7 +18,7 @@ export const Navbar = () => {
                 [css.navbar__container_mobile]: !isDesktop
             })}
         >
-            <NavLink path={routes.main} icon="catalog">
+            <NavLink path={routes.catalog} icon="catalog">
                 <Typography.h3 as="span">
                     {getLangKey('catalog').toString()}
                 </Typography.h3>

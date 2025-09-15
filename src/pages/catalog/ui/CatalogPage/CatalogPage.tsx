@@ -17,7 +17,7 @@ const CatalogPage = () => {
     }, []);
 
     return (
-        <PageWrapper withSidebar>
+        <PageWrapper withSidebar padding={null}>
             {isDesktop && <FiltersSidebar />}
             <Catalog />
         </PageWrapper>

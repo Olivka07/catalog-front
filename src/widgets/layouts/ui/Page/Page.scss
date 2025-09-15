@@ -1,7 +1,17 @@
+@import '../../../../shared/styles/mixins.scss';
+
 .page {
     height: calc(100% - var(--header-height) - 20px);
-    padding: 0 30px;
+
+    @for $i from 1 through 100 {
+        &__padding_#{$i} {
+            padding: 0 #{$i}px;
+        }
+    }
+
     &__withSidebar {
-        padding-left: calc(var(--sidebar-closed-width) + 10px);
+        @include tablet1024(min-width) {
+            padding-left: calc(var(--sidebar-closed-width) + 10px);
+        }
     }
 }

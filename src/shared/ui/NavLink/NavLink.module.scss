@@ -9,6 +9,20 @@
     align-items: center;
 }
 
+.NavLink__hasHover:not(.NavLink_active):hover,
+.NavLink__hasHover:not(.NavLink_active).NavLink__hasHover_hovered {
+    transform: scale(1.1);
+}
+
+.NavLink.NavLink_active {
+    color: var(--active-color);
+
+    .icon,
+    .icon path {
+        fill: var(--active-color);
+    }
+}
+
 .icon {
     margin-right: 5px;
 }

@@ -34,20 +34,19 @@ p {
 
     margin: 0;
     box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-size: max(320px, 40vw);
-    background-position: bottom right;
+    background-repeat: space;
+    background-size: max(350px, 20vw);
     background-color: var(--bg-main-color);
     user-select: none;
 
     @include withThemeTransition;
 }
 
-.light.desktop {
+.light {
     background-image: url('../assets/images/desktop_light_background.png');
 }
 
-.dark.desktop {
+.dark {
     background-image: url('../assets/images/desktop_dark_background.png');
 }
 

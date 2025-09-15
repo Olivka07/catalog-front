@@ -72,13 +72,15 @@ $mobileSize: 320;
     transition: all 0.3s ease 0.2s;
 }
 
-@mixin useDefaultScrollbarStyle($width: 7px) {
+@mixin useDefaultScrollbarStyle($width: 0.6rem) {
     &::-webkit-scrollbar {
         background-color: transparent;
         width: $width;
+        cursor: pointer;
     }
 
     &::-webkit-scrollbar-thumb {
+        cursor: pointer;
         background-color: var(--scrollbar-thumb-color);
         border-radius: 6px; /* Закругление углов */
         box-shadow: var(--scrollbar-thumb-box-shadow); /* Тень */
