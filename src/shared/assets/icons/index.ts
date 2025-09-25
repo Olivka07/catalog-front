@@ -7,6 +7,8 @@ import ChevronOpenIcon from './chevronOpen.svg';
 import ChocolateIcon from './chocolate.svg';
 import CloseIcon from './close.svg';
 import DrinkingIcon from './drinking.svg';
+import FishIcon from './fish.svg';
+import FruitsIcon from './fruits.svg';
 import MenuIcon from './menu.svg';
 import MenuNavigationIcon from './menu_navigation.svg';
 import MilkIcon from './milk.svg';
@@ -16,7 +18,6 @@ import SearchIcon from './search.svg';
 import SortIcon from './sort.svg';
 import TeaCoffeeCacaoIcon from './teaCoffeeCacao.svg';
 import VegetablesIcon from './vegetables.svg';
-import FruitsIcon from './fruits.svg';
 
 export {
     AttendIcon,
@@ -28,6 +29,7 @@ export {
     ChocolateIcon,
     CloseIcon,
     DrinkingIcon,
+    FishIcon,
     FruitsIcon,
     MenuIcon,
     MenuNavigationIcon,

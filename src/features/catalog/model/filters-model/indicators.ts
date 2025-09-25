@@ -11,6 +11,7 @@ export const catalogIndicators = createIndicatorsControl<CatalogIndicators>({
         chocolate: false,
         chancellery: false,
         drinking: false,
+        fish: false,
         fruits: false,
         milk: false,
         sauce: false,

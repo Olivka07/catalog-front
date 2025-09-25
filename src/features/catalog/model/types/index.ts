@@ -9,6 +9,7 @@ export type CatalogIndicators = {
     chancellery: boolean;
     chocolate: boolean;
     drinking: boolean;
+    fish: boolean;
     fruits: boolean;
     milk: boolean;
     sauce: boolean;

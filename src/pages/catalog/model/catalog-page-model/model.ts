@@ -48,6 +48,7 @@ const $sausageMeatCategory = catalogIndicators.$value.map(
 const $vegetablesCategory = catalogIndicators.$value.map(
     ({ vegetables }) => vegetables
 );
+const $fishCategory = catalogIndicators.$value.map(({ fish }) => fish);
 const $fruitsCategory = catalogIndicators.$value.map(({ fruits }) => fruits);
 
 const $categories = combine(
@@ -55,6 +56,7 @@ const $categories = combine(
     $chancelleryCategory,
     $chocolateCategory,
     $drinkingCategory,
+    $fishCategory,
     $fruitsCategory,
     $milkCategory,
     $sauceCategory,
@@ -66,6 +68,7 @@ const $categories = combine(
         chancellery,
         chocolate,
         drinking,
+        fish,
         fruits,
         milk,
         sauce,
@@ -77,6 +80,7 @@ const $categories = combine(
         chancellery,
         chocolate,
         drinking,
+        fish,
         fruits,
         milk,
         sauce,

@@ -2,6 +2,76 @@ import { Product } from './types';
 import { createNewProduct } from './utils';
 
 export const products: Product[] = [
+    createNewProduct('Торт Бэйкер Хаус', 'chocolate', {
+        price: 195,
+        img: 'tort_backer_house',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Рулет маковый', 'chocolate', {
+        price: 150,
+        img: 'rulet_makovy_sdobny',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Киндер Шоколад', 'chocolate', {
+        price: 80,
+        img: 'kinder_chocolate',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Киндер Кантри', 'chocolate', {
+        price: 35,
+        img: 'kinder_kantri',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Киндер Буэно', 'chocolate', {
+        price: 60,
+        img: 'kinder_bueno',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Баунти, 55г', 'chocolate', {
+        price: 45,
+        img: 'bounty',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Пикник, 76г', 'chocolate', {
+        price: 65,
+        img: 'picnic',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Баунти, 82.5г', 'chocolate', {
+        price: 65,
+        img: 'bounty',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Сникерс, 81г', 'chocolate', {
+        price: 65,
+        img: 'snickers',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Алёнка', 'chocolate', {
+        price: 90,
+        img: 'alenka',
+        isSpecialOffer: true
+    }),
+    createNewProduct('Эгоист, 95г', 'teaCoffeeCacao', {
+        price: 850,
+        img: 'egoiste_95'
+    }),
+    createNewProduct('Мерси, 250г', 'chocolate', {
+        price: 270,
+        isSpecialOffer: true,
+        img: 'merci_250'
+    }),
+    createNewProduct('Нутелла, 180г', 'chocolate', {
+        price: 400,
+        isSpecialOffer: true,
+        img: 'nutella_180'
+    }),
+    createNewProduct('Скумбрия копчёная', 'fish', {
+        price: 650,
+        isSpecialOffer: true,
+        img: 'skumbriya_kopcheniya',
+        measure: 'kg'
+    }),
     createNewProduct('Ветчина «Альми»', 'sausageMeat', {
         price: 605,
         isSpecialOffer: false,

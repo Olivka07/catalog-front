@@ -6,6 +6,8 @@ export type Category =
     | 'drinking'
     | 'chancellery'
     | 'chocolate'
+    | 'fish'
+    | 'fruits'
     | 'milk'
     | 'sauce'
     | 'sausageMeat'
