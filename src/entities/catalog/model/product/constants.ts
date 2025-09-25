@@ -227,7 +227,7 @@ export const products: Product[] = [
         img: 'frutto_bello'
     }),
     createNewProduct('Baby Fox 50г', 'chocolate', {
-        price: 49,
+        price: 52,
         isSpecialOffer: false,
         img: 'baby_fox_50'
     }),
