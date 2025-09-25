@@ -138,7 +138,7 @@ export const products: Product[] = [
         img: 'torabika_latte'
     }),
     createNewProduct('Нескафе 3 в 1', 'teaCoffeeCacao', {
-        price: 17,
+        price: 18,
         img: 'nescafe_3_v_1'
     }),
     createNewProduct('Коровка бекова', 'chocolate', {
